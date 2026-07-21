@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.C⚽️M Pro - Full Dashboard</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg: #121214;
+            --card: #1e1e24;
+            --input-bg: #2a2a32;
+            --border: #3f3f46;
+            --text: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        .desktop-container {
+            display: grid;
+            grid-template-columns: 0.9fr 1.0fr;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .brand-panel {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 40px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .mascot-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            opacity: 0.85;
+        }
+
+        .brand-overlay {
+            display: none;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            background: rgba(9, 9, 11, 0.75);
+            backdrop-filter: blur(8px);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .brand-logo-text {
+            font-size: 2.2em;
+            font-weight: 900;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-sub {
+            font-size: 0.85em;
+            color: #a1a1aa;
+            margin-top: -2px;
+        }
+
+        #termometro-container {
+            width: 100%;
+            margin-bottom: 5px;
+            background: #09090b;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        #term-text {
+            font-size: 0.85em;
+            color: #a1a1aa;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        #termometro {
+            height: 10px;
+            width: 100%;
+            background: #27272a;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        #term-bar {
+            height: 100%;
+            width: 50%;
+            background: linear-gradient(to right, #ef4444, #f59e0b, #4ade80);
+            transition: width 0.3s ease;
+        }
+
+        .main-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 30px;
+            background: #18181b;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 6px;
+            flex-wrap: nowrap;
+        }
+        .tab-btn {
+            flex: 1;
+            text-align: center;
+            background: #27272a;
+            color: #a1a1aa;
+            padding: 10px 4px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.85em;
+            transition: 0.2s;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: flex; flex-direction: column; gap: 15px; }
+
+        .result-box {
+            background: #09090b;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .result-val { font-size: 1.6em; font-weight: bold; color: #4ade80; }
+        .sub-result { font-size: 1em; color: #fbbf24; font-weight: bold; }
+        .appm-val { font-size: 0.95em; color: #38bdf8; font-weight: bold; }
+        .conf-val { font-size: 0.85em; color: #a1a1aa; }
+
+        .obs-box {
+            margin-top: 8px;
+            padding: 10px;
+            background: #18181b;
+            border-radius: 8px;
+            border-left: 4px solid #a5b4fc;
+            font-size: 0.82em;
+            color: #e2e8f0;
+            line-height: 1.4;
+        }
+
+        .rastreador-alert {
+            margin-top: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82em;
+            background: #18181b;
+            border-left: 4px solid var(--primary);
+        }
+
+        .inputs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .full-width { grid-column: span 2; }
+
+        input, select, textarea, .country-btn {
+            width: 100%;
+            padding: 10px;
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            outline: none;
+        }
+        
+        #time1, #time2 {
+            text-transform: uppercase;
+        }
+
+        input:focus, textarea:focus, select:focus { border-color: var(--primary); }
+
+        .tempo-selector {
+            display: flex;
+            background: #09090b;
+            padding: 4px;
+            border-radius: 8px;
+            gap: 4px;
+            border: 1px solid var(--border);
+        }
+        .tempo-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #a1a1aa;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .tempo-btn.active { background: var(--primary); color: white; }
+
+        .action-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .btn-action {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            font-size: 0.9em;
+            transition: opacity 0.2s;
+        }
+        .btn-action:hover { opacity: 0.9; }
+
+        .btn-blue { background: #2563eb; }
+        .btn-green { background: #16a34a; }
+        .btn-red { background: #dc2626; }
+        .btn-yellow { background: #ca8a04; }
+
+        .country-select-wrapper { position: relative; }
+        .country-dropdown {
+            display: none;
+            position: absolute;
+            top: 105%;
+            left: 0;
+            width: 100%;
+            background: #18181b;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            z-index: 99;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+        }
+        .country-dropdown.open { display: block; }
+        .country-search { width: 100%; padding: 10px; background: #09090b; border: none; border-bottom: 1px solid var(--border); color: white; text-align: left; }
+        .country-list { max-height: 180px; overflow-y: auto; text-align: left; }
+        .country-item { padding: 8px 12px; display: flex; align-items: center; gap: 10px; cursor: pointer; border-bottom: 1px solid #27272a; }
+        .country-item:hover { background: #27272a; }
+        .flag-img { width: 20px; height: 14px; object-fit: cover; }
+
+        /* ESTILOS DE AUTOCOMPLETAR TIMES */
+        .autocomplete-wrapper { position: relative; width: 100%; }
+        .autocomplete-list {
+            position: absolute;
+            top: 105%;
+            left: 0;
+            right: 0;
+            background: #18181b;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+        }
+        .autocomplete-item {
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 0.85em;
+            text-align: left;
+            border-bottom: 1px solid #27272a;
+        }
+        .autocomplete-item:hover { background: var(--primary); color: white; }
+
+        .card-stat { background: #09090b; border-radius: 8px; padding: 12px; border: 1px solid var(--border); margin-bottom: 10px; }
+        .item { background: #09090b; padding: 12px; margin: 8px 0; border-radius: 8px; border-left: 4px solid var(--primary); font-size: 0.88em; line-height: 1.5; }
+        .btn-hist { background: transparent; border: none; cursor: pointer; padding: 4px 8px; font-weight: bold; border-radius: 4px; margin-right: 5px; }
+
+        @media (max-width: 900px) {
+            .desktop-container {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .brand-panel { height: 300px; }
+            .main-panel { height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="desktop-container">
+
+    <div class="brand-panel">
+        <img src="https://i.ibb.co/KJsJKv7/IMG-20260719-211202.png" alt="Robot Mascot" class="mascot-img">
+        <div class="brand-overlay">
+            <div class="brand-logo-text">RoBET</div>
+            <div class="brand-sub">K.COM Pro Analysis</div>
+        </div>
+    </div>
+
+    <div class="main-panel">
+        
+        <div class="tabs">
+            <div class="tab-btn active" id="btn-calc" onclick="showTab('calc')">CALC</div>
+            <div class="tab-btn" id="btn-campeonatos" onclick="showTab('campeonatos')">CAMP</div>
+            <div class="tab-btn" id="btn-rastreador" onclick="showTab('rastreador')">RAST</div>
+            <div class="tab-btn" id="btn-hist" onclick="showTab('hist')">HIST</div>
+        </div>
+
+        <!-- ABA CALCULADORA -->
+        <div id="calc" class="tab-content active">
+            
+            <div id="termometro-container">
+                <div id="term-text">Assertividade: 50%</div>
+                <div id="termometro"><div id="term-bar"></div></div>
+            </div>
+
+            <div class="result-box">
+                <div id="res-label" style="font-size: 0.8em; color: #a1a1aa;">Projeção Final:</div>
+                <div id="res-val" class="result-val">0 cantos</div>
+                <div id="sub-res" class="sub-result">0.0 cantos</div>
+                <div id="appm-res" class="appm-val">APPM: 0.00</div>
+                <div id="conf-val" class="conf-val">Confiança: 0%</div>
+
+                <div id="obs-confronto" class="obs-box">
+                    💡 <b>Observação (Histórico):</b> Digite o nome dos times para ver as médias acumuladas.
+                </div>
+                
+                <div id="rastreador-live-box" class="rastreador-alert" style="display: none;">
+                    <span id="rastreador-status" style="font-weight:bold;">📡 RASTREADOR: AGUARDANDO DADOS</span>
+                    <div id="rastreador-details">Preencha as informações do jogo.</div>
+                </div>
+            </div>
+
+            <div class="tempo-selector">
+                <button type="button" class="tempo-btn active" id="btn-mode-ht" onclick="setModoTempo('HT')">HT (1º Tempo)</button>
+                <button type="button" class="tempo-btn" id="btn-mode-pg" onclick="setModoTempo('PG')">PG (90 Min)</button>
+            </div>
+
+            <div class="inputs-grid" id="inputGroup">
+                <div class="country-select-wrapper full-width">
+                    <button type="button" class="country-btn" id="countryBtn">
+                        <span id="countrySelected">🌐 Selecionar País / Liga</span>
+                        <small>▼</small>
+                    </button>
+                    <div class="country-dropdown" id="countryDropdown">
+                        <input type="text" id="countrySearch" class="country-search" placeholder="Buscar país..." autocomplete="off">
+                        <div class="country-list" id="countryList"></div>
+                    </div>
+                </div>
+
+                <input type="number" id="minuto" class="numeric full-width" placeholder="Minuto Atual">
+                
+                <!-- TIME A COM AUTOCOMPLETAR -->
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="time1" placeholder="Time A" autocomplete="off">
+                    <div id="list-time1" class="autocomplete-list"></div>
+                </div>
+
+                <!-- TIME B COM AUTOCOMPLETAR -->
+                <div class="autocomplete-wrapper">
+                    <input type="text" id="time2" placeholder="Time B" autocomplete="off">
+                    <div id="list-time2" class="autocomplete-list"></div>
+                </div>
+
+                <input type="number" id="gols1" class="numeric" placeholder="Gols A">
+                <input type="number" id="gols2" class="numeric" placeholder="Gols B">
+                <input type="number" id="cantos1" class="numeric" placeholder="Cantos A">
+                <input type="number" id="cantos2" class="numeric" placeholder="Cantos B">
+                <input type="number" id="atq1" class="numeric" placeholder="Atq. Perigoso A">
+                <input type="number" id="atq2" class="numeric" placeholder="Atq. Perigoso B">
+            </div>
+
+            <div class="action-bar">
+                <button type="button" onclick="salvarManual()" class="btn-action btn-blue">Salvar</button>
+                <button type="button" onclick="calcular()" class="btn-action btn-green">Analisar</button>
+                <button type="button" onclick="limparDados()" class="btn-action btn-red">Limpar</button>
+                <button type="button" onclick="showTab('rastreador')" class="btn-action btn-yellow">Rastreador</button>
+            </div>
+
+        </div>
+
+        <!-- ABA CAMPEONATOS -->
+        <div id="campeonatos" class="tab-content">
+            <h3>🏆 Gestão de Campeonatos e Times</h3>
+
+            <!-- BOX COMANDO GEMINI COM BOTÃO DE COPIAR -->
+            <div class="card-stat" style="border-color: #6366f1; background: #13131a;">
+                <h4 style="color:#a5b4fc; margin-bottom: 6px;">🤖 Pedir Lista ao Gemini:</h4>
+                <div style="font-size: 0.82em; color: #e2e8f0; background: #09090b; padding: 8px; border-radius: 6px; border: 1px solid var(--border); margin-bottom: 8px; font-style: italic;" id="textoComando">
+                    Gemini, me mande a lista de times do campeonato [NOME DO CAMPEONATO] no formato correto para a calculadora.
+                </div>
+                <button type="button" class="btn-action btn-yellow" style="width: 100%; padding: 8px; font-size: 0.85em;" onclick="copiarComando()">📋 Copiar Frase</button>
+            </div>
+
+            <div class="card-stat">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" id="campNome" placeholder="Nome do Campeonato (ex: Brasileirão)" style="text-align: left;">
+                    <select id="campPais" style="text-align: left;">
+                        <option value="">Selecione o País</option>
+                    </select>
+                </div>
+                <textarea id="campLista" rows="6" placeholder="Cole aqui a lista de times fornecida pelo Gemini..." style="text-align: left; resize: vertical;"></textarea>
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <button type="button" class="btn-action btn-blue" style="flex:1;" onclick="registrarCampeonato()">Registrar</button>
+                    <button type="button" class="btn-action btn-green" style="flex:1;" onclick="atualizarCampeonato()">Atualizar</button>
+                </div>
+            </div>
+
+            <h4 style="color:#a5b4fc; margin-top: 10px;">Campeonatos Cadastrados:</h4>
+            <div id="listaCampeonatosCadastrados"></div>
+        </div>
+
+        <!-- ABA RASTREADOR -->
+        <div id="rastreador" class="tab-content">
+            <h3>📡 Visão Geral do Rastreador</h3>
+            
+            <div class="card-stat" style="border-color: #6366f1; background: #13131a;">
+                <h4 style="color:#a5b4fc;">⚔️ Análise do Confronto Direct (Histórico)</h4>
+                <div id="stat-confronto" style="margin-top:8px; font-size:0.9em; line-height:1.6; color:#e2e8f0;">
+                    Digite os nomes dos times na aba Calculadora para rastrear o histórico das equipes.
+                </div>
+            </div>
+
+            <div class="card-stat">
+                <h4 style="color:#38bdf8;">⏱️ Minutos Ideais</h4>
+                <p id="stat-minutos">Carregando...</p>
+            </div>
+            <div class="card-stat">
+                <h4 style="color:#38bdf8;">⚡ Média de APPM de Sucesso</h4>
+                <p id="stat-appm">Carregando...</p>
+            </div>
+            <div class="card-stat">
+                <h4 style="color:#38bdf8;">⚔️ Ataques Perigosos Ideais</h4>
+                <p id="stat-atq">Carregando...</p>
+            </div>
+            <div class="card-stat">
+                <h4 style="color:#38bdf8;">🌍 Ligas Lucrativas</h4>
+                <div id="stat-ligas">Carregando...</div>
+            </div>
+        </div>
+
+        <!-- ABA HISTÓRICO -->
+        <div id="hist" class="tab-content">
+            <h3>Histórico Recente</h3>
+            <div id="listaHistorico"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+const dbPaises = [
+  // ── COMPETIÇÕES INTERNACIONAIS ──────────────────
+  { fifa: "INT", flag: "un", nome: "🌍 Mundial / Seleções (Geral)" },
+  { fifa: "UCL", flag: "eu", nome: "🏆 UEFA Champions League" },
+  { fifa: "UEL", flag: "eu", nome: "🥈 UEFA Europa League" },
+  { fifa: "UECL", flag: "eu", nome: "🥉 UEFA Conference League" },
+  { fifa: "LIB", flag: "un", nome: "🏆 Copa Libertadores" },
+  { fifa: "SUL", flag: "un", nome: "🥈 Copa Sul-Americana" },
+  { fifa: "MUNI", flag: "un", nome: "⚽ Mundial de Clubes / Interclubes" },
+
+  // ── AMÉRICA DO SUL ─────────────────────────────
+  { fifa: "BRA", flag: "br", nome: "Brasil" },
+  { fifa: "ARG", flag: "ar", nome: "Argentina" },
+  { fifa: "COL", flag: "co", nome: "Colômbia" },
+  { fifa: "URU", flag: "uy", nome: "Uruguai" },
+  { fifa: "CHI", flag: "cl", nome: "Chile" },
+  { fifa: "ECU", flag: "ec", nome: "Equador" },
+  { fifa: "PAR", flag: "py", nome: "Paraguai" },
+  { fifa: "PER", flag: "pe", nome: "Peru" },
+  { fifa: "BOL", flag: "bo", nome: "Bolívia" },
+  { fifa: "VEN", flag: "ve", nome: "Venezuela" },
+  { fifa: "GUY", flag: "gy", nome: "Guiana" },
+  { fifa: "SUR", flag: "sr", nome: "Suriname" },
+
+  // ── EUROPA ─────────────────────────────────────
+  { fifa: "ENG", flag: "gb-eng", nome: "Inglaterra" },
+  { fifa: "ESP", flag: "es", nome: "Espanha" },
+  { fifa: "GER", flag: "de", nome: "Alemanha" },
+  { fifa: "ITA", flag: "it", nome: "Itália" },
+  { fifa: "FRA", flag: "fr", nome: "França" },
+  { fifa: "POR", flag: "pt", nome: "Portugal" },
+  { fifa: "NED", flag: "nl", nome: "Países Baixos" },
+  { fifa: "BEL", flag: "be", nome: "Bélgica" },
+  { fifa: "TUR", flag: "tr", nome: "Turquia" },
+  { fifa: "SCO", flag: "gb-sct", nome: "Escócia" },
+  { fifa: "GRE", flag: "gr", nome: "Grécia" },
+  { fifa: "AUT", flag: "at", nome: "Áustria" },
+  { fifa: "SUI", flag: "ch", nome: "Suíça" },
+  { fifa: "DEN", flag: "dk", nome: "Dinamarca" },
+  { fifa: "NOR", flag: "no", nome: "Noruega" },
+  { fifa: "SWE", flag: "se", nome: "Suécia" },
+  { fifa: "POL", flag: "pl", nome: "Polônia" },
+  { fifa: "CZE", flag: "cz", nome: "República Tcheca" },
+  { fifa: "CRO", flag: "hr", nome: "Croácia" },
+  { fifa: "SRB", flag: "rs", nome: "Sérvia" },
+  { fifa: "UKR", flag: "ua", nome: "Ucrânia" },
+  { fifa: "ROU", flag: "ro", nome: "Romênia" },
+  { fifa: "HUN", flag: "hu", nome: "Hungria" },
+  { fifa: "IRL", flag: "ie", nome: "Irlanda" },
+  { fifa: "NIR", flag: "gb-nir", nome: "Irlanda do Norte" },
+  { fifa: "WAL", flag: "gb-wls", nome: "País de Gales" },
+  { fifa: "FIN", flag: "fi", nome: "Finlândia" },
+  { fifa: "SVK", flag: "sk", nome: "Eslováquia" },
+  { fifa: "SVN", flag: "si", nome: "Eslovênia" },
+  { fifa: "BUL", flag: "bg", nome: "Bulgária" },
+  { fifa: "BIH", flag: "ba", nome: "Bósnia e Herzegovina" },
+  { fifa: "ALB", flag: "al", nome: "Albânia" },
+  { fifa: "MKD", flag: "mk", nome: "Macedônia do Norte" },
+  { fifa: "CYP", flag: "cy", nome: "Chipre" },
+  { fifa: "GEO", flag: "ge", nome: "Geórgia" },
+  { fifa: "ISL", flag: "is", nome: "Islândia" },
+  { fifa: "LUX", flag: "lu", nome: "Luxemburgo" },
+  { fifa: "MNE", flag: "me", nome: "Montenegro" },
+  { fifa: "EST", flag: "ee", nome: "Estônia" },
+  { fifa: "LVA", flag: "lv", nome: "Letônia" },
+  { fifa: "LTU", flag: "lt", nome: "Lituânia" },
+  { fifa: "ARM", flag: "am", nome: "Armênia" },
+  { fifa: "AZE", flag: "az", nome: "Azerbaijão" },
+  { fifa: "KAZ", flag: "kz", nome: "Cazaquistão" },
+  { fifa: "BLR", flag: "by", nome: "Bielorrússia" },
+  { fifa: "MDA", flag: "md", nome: "Moldávia" },
+  { fifa: "MLT", flag: "mt", nome: "Malta" },
+  { fifa: "FRO", flag: "fo", nome: "Ilhas Faroe" },
+  { fifa: "GIB", flag: "gi", nome: "Gibraltar" },
+  { fifa: "AND", flag: "ad", nome: "Andorra" },
+  { fifa: "SMR", flag: "sm", nome: "San Marino" },
+  { fifa: "LIE", flag: "li", nome: "Liechtenstein" },
+  { fifa: "KOS", flag: "xk", nome: "Kosovo" },
+
+  // ── AMÉRICA DO NORTE, CENTRAL E CARIBE (CONCACAF) ──
+  { fifa: "USA", flag: "us", nome: "Estados Unidos" },
+  { fifa: "MEX", flag: "mx", nome: "México" },
+  { fifa: "CAN", flag: "ca", nome: "Canadá" },
+  { fifa: "CRC", flag: "cr", nome: "Costa Rica" },
+  { fifa: "PAN", flag: "pa", nome: "Panamá" },
+  { fifa: "JAM", flag: "jm", nome: "Jamaica" },
+  { fifa: "HON", flag: "hn", nome: "Honduras" },
+  { fifa: "GUA", flag: "gt", nome: "Guatemala" },
+  { fifa: "SLV", flag: "sv", nome: "El Salvador" },
+  { fifa: "TRI", flag: "tt", nome: "Trinidad e Tobago" },
+  { fifa: "HTI", flag: "ht", nome: "Haiti" },
+  { fifa: "CUR", flag: "cw", nome: "Curaçau" },
+  { fifa: "NCA", flag: "ni", nome: "Nicarágua" },
+  { fifa: "DOM", flag: "do", nome: "República Dominicana" },
+  { fifa: "CUB", flag: "cu", nome: "Cuba" },
+  { fifa: "PUR", flag: "pr", nome: "Porto Rico" },
+  { fifa: "SUR", flag: "sr", nome: "Suriname" },
+
+  // ── ÁSIA E ORIENTE MÉDIO (AFC) ─────────────────
+  { fifa: "JPN", flag: "jp", nome: "Japão" },
+  { fifa: "KOR", flag: "kr", nome: "Coreia do Sul" },
+  { fifa: "SAU", flag: "sa", nome: "Arábia Saudita" },
+  { fifa: "AUS", flag: "au", nome: "Austrália" },
+  { fifa: "IRN", flag: "ir", nome: "Irã" },
+  { fifa: "QAT", flag: "qa", nome: "Catar" },
+  { fifa: "UAE", flag: "ae", nome: "Emirados Árabes" },
+  { fifa: "CHN", flag: "cn", nome: "China" },
+  { fifa: "UZB", flag: "uz", nome: "Uzbequistão" },
+  { fifa: "IRQ", flag: "iq", nome: "Iraque" },
+  { fifa: "JOR", flag: "jo", nome: "Jordânia" },
+  { fifa: "OMA", flag: "om", nome: "Omã" },
+  { fifa: "BHR", flag: "bh", nome: "Bahrein" },
+  { fifa: "THA", flag: "th", nome: "Tailândia" },
+  { fifa: "VIE", flag: "vn", nome: "Vietnã" },
+  { fifa: "IDN", flag: "id", nome: "Indonésia" },
+  { fifa: "IND", flag: "in", nome: "Índia" },
+  { fifa: "MAS", flag: "my", nome: "Malásia" },
+  { fifa: "SGP", flag: "sg", nome: "Singapura" },
+  { fifa: "PHL", flag: "ph", nome: "Filipinas" },
+  { fifa: "KUW", flag: "kw", nome: "Kuweit" },
+  { fifa: "SYR", flag: "sy", nome: "Síria" },
+  { fifa: "LBN", flag: "lb", nome: "Líbano" },
+  { fifa: "PLE", flag: "ps", nome: "Palestina" },
+  { fifa: "KGZ", flag: "kg", nome: "Quirguistão" },
+  { fifa: "TJK", flag: "tj", nome: "Tadjiquistão" },
+
+  // ── ÁFRICA (CAF) ───────────────────────────────
+  { fifa: "EGY", flag: "eg", nome: "Egito" },
+  { fifa: "MAR", flag: "ma", nome: "Marrocos" },
+  { fifa: "ALG", flag: "dz", nome: "Argélia" },
+  { fifa: "TUN", flag: "tn", nome: "Tunísia" },
+  { fifa: "NGA", flag: "ng", nome: "Nigéria" },
+  { fifa: "SEN", flag: "sn", nome: "Senegal" },
+  { fifa: "GHA", flag: "gh", nome: "Gana" },
+  { fifa: "CIV", flag: "ci", nome: "Costa do Marfim" },
+  { fifa: "CMR", flag: "cm", nome: "Camarões" },
+  { fifa: "RSA", flag: "za", nome: "África do Sul" },
+  { fifa: "MLI", flag: "ml", nome: "Mali" },
+  { fifa: "BFA", flag: "bf", nome: "Burkina Faso" },
+  { fifa: "COD", flag: "cd", nome: "RD do Congo" },
+  { fifa: "ANG", flag: "ao", nome: "Angola" },
+  { fifa: "ZAM", flag: "zm", nome: "Zâmbia" },
+  { fifa: "CPV", flag: "cv", nome: "Cabo Verde" },
+  { fifa: "GUI", flag: "gn", nome: "Guiné" },
+  { fifa: "EQG", flag: "gq", nome: "Guiné Equatorial" },
+  { fifa: "GAB", flag: "ga", nome: "Gabão" },
+  { fifa: "MOZ", flag: "mz", nome: "Moçambique" },
+  { fifa: "KEN", flag: "ke", nome: "Quênia" },
+  { fifa: "UGA", flag: "ug", nome: "Uganda" },
+  { fifa: "TAN", flag: "tz", nome: "Tanzânia" },
+  { fifa: "LBY", flag: "ly", nome: "Líbia" },
+  { fifa: "SUD", flag: "sd", nome: "Sudão" },
+  { fifa: "BEN", flag: "bj", nome: "Benin" },
+  { fifa: "TOG", flag: "tg", nome: "Togo" },
+  { fifa: "CWR", flag: "cw", nome: "Curaçau" },
+
+  // ── OCEANIA (OFC) ──────────────────────────────
+  { fifa: "NZL", flag: "nz", nome: "Nova Zelândia" },
+  { fifa: "FIJ", flag: "fj", nome: "Fiji" },
+  { fifa: "NCA", flag: "nc", nome: "Nova Caledônia" },
+  { fifa: "TAH", flag: "pf", nome: "Taiti" },
+  { fifa: "SOL", flag: "sb", nome: "Ilhas Salomão" },
+  { fifa: "PNG", flag: "pg", nome: "Papua-Nova Guiné" }
+];
+let paisSelecionado = null;
+let db = JSON.parse(localStorage.getItem('kcom_data') || '{}');
+let dbCampeonatos = JSON.parse(localStorage.getItem('kcom_campeonatos') || '{}');
+let modoTempoSelecionado = 'HT';
+const countryBtn = document.getElementById('countryBtn');
+const countryDropdown = document.getElementById('countryDropdown');
+const countrySearch = document.getElementById('countrySearch');
+const countryList = document.getElementById('countryList');
+const countrySelected = document.getElementById('countrySelected');
+
+function renderPaises(lista) {
+countryList.innerHTML = '';
+const selectPaisElem = document.getElementById('campPais');
+selectPaisElem.innerHTML = '<option value="">Selecione o País</option>';
+lista.forEach(p => {
+const item = document.createElement('div');
+item.className = 'country-item';
+item.innerHTML = `<img src="https://flagcdn.com/w20/${p.flag}.png" class="flag-img"> <b style="color:#38bdf8; width:32px;">${p.fifa}</b> <span>${p.nome}</span>`;
+item.onclick = () => {
+paisSelecionado = p;
+countrySelected.innerHTML = `<img src="https://flagcdn.com/w20/${p.flag}.png" class="flag-img"> <b style="color:#38bdf8;">[${p.fifa}]</b> ${p.nome}`;
+countryDropdown.classList.remove('open');
+};
+countryList.appendChild(item);
+const opt = document.createElement('option');
+opt.value = p.nome;
+opt.textContent = p.nome;
+selectPaisElem.appendChild(opt);
+});
+}
+renderPaises(dbPaises);
+
+countryBtn.onclick = () => {
+countryDropdown.classList.toggle('open');
+if (countryDropdown.classList.contains('open')) {
+countrySearch.value = '';
+renderPaises(dbPaises);
+countrySearch.focus();
+}
+};
+
+countrySearch.oninput = (e) => {
+const t = e.target.value.toLowerCase();
+renderPaises(dbPaises.filter(p => p.nome.toLowerCase().includes(t) || p.fifa.toLowerCase().includes(t)));
+};
+
+document.addEventListener('click', (e) => {
+if (!countryBtn.contains(e.target) && !countryDropdown.contains(e.target)) {
+countryDropdown.classList.remove('open');
+}
+if (!e.target.closest('.autocomplete-wrapper')) {
+document.querySelectorAll('.autocomplete-list').forEach(l => l.style.display = 'none');
+}
+});
+
+function copiarComando() {
+const texto = document.getElementById('textoComando').innerText;
+navigator.clipboard.writeText(texto).then(() => {
+alert('Frase copiada com sucesso! Agora é só colar para o Gemini.');
+}).catch(err => {
+alert('Erro ao copiar frase: ' + err);
+});
+}
+
+function processarListaTimes(textoBruto) {
+return textoBruto
+.split(/[\n,]+/)
+.map(t => t.trim().replace(/^[0-9]+\s*[.-–)]\s*/, ''))
+.filter(t => t.length > 0);
+}
+
+function registrarCampeonato() {
+const nome = document.getElementById('campNome').value.trim();
+const pais = document.getElementById('campPais').value;
+const listaTexto = document.getElementById('campLista').value;
+if (!nome || !pais || !listaTexto) {
+alert('Preencha o Nome do Campeonato, País e a Lista de Times.');
+return;
+}
+const times = processarListaTimes(listaTexto);
+dbCampeonatos[nome] = {
+nome: nome,
+pais: pais,
+times: times
+};
+localStorage.setItem('kcom_campeonatos', JSON.stringify(dbCampeonatos));
+alert(`Campeonato "${nome}" registrado com sucesso com ${times.length} times!`);
+renderizarCampeonatos();
+limparFormCampeonato();
+}
+
+function atualizarCampeonato() {
+registrarCampeonato();
+}
+
+function deletarCampeonato(nome) {
+if (confirm(`Deseja deletar o campeonato ${nome}?`)) {
+delete dbCampeonatos[nome];
+localStorage.setItem('kcom_campeonatos', JSON.stringify(dbCampeonatos));
+renderizarCampeonatos();
+}
+}
+
+function carregarParaEdicao(nome) {
+const c = dbCampeonatos[nome];
+if (c) {
+document.getElementById('campNome').value = c.nome;
+document.getElementById('campPais').value = c.pais;
+document.getElementById('campLista').value = c.times.join('\n');
+}
+}
+
+function limparFormCampeonato() {
+document.getElementById('campNome').value = '';
+document.getElementById('campPais').value = '';
+document.getElementById('campLista').value = '';
+}
+
+function renderizarCampeonatos() {
+const container = document.getElementById('listaCampeonatosCadastrados');
+let html = '';
+for (let c in dbCampeonatos) {
+const item = dbCampeonatos[c];
+html += `<div class="item" style="border-color:#38bdf8;"> <div style="display:flex; justify-content:space-between; align-items:center;"> <div> <strong style="color:#4ade80;">${item.nome}</strong> (${item.pais})<br> <small style="color:#a1a1aa;">${item.times.length} times: ${item.times.slice(0, 4).join(', ')}...</small> </div> </div> <div style="margin-top:8px;"> <button class="btn-hist" style="color:#38bdf8; background:#1e3a8a;" onclick="carregarParaEdicao('${item.nome}')">✏️ Editar</button> <button class="btn-hist" style="color:#ef4444; background:#7f1d1d;" onclick="deletarCampeonato('${item.nome}')">🗑️ Deletar</button> </div> </div>`;
+}
+container.innerHTML = html || '<p style="color:#a1a1aa;">Nenhum campeonato registrado ainda.</p>';
+}
+
+function configurarAutocompletar(inputId, listId) {
+const input = document.getElementById(inputId);
+const list = document.getElementById(listId);
+input.addEventListener('input', function() {
+const val = this.value.trim().toLowerCase();
+list.innerHTML = '';
+if (val.length < 2) {
+list.style.display = 'none';
+return;
+}
+let timesDisponiveis = [];
+for (let c in dbCampeonatos) {
+const camp = dbCampeonatos[c];
+if (!paisSelecionado || camp.pais.toLowerCase() === paisSelecionado.nome.toLowerCase()) {
+timesDisponiveis = timesDisponiveis.concat(camp.times);
+}
+}
+if (timesDisponiveis.length === 0) {
+for (let c in dbCampeonatos) {
+timesDisponiveis = timesDisponiveis.concat(dbCampeonatos[c].times);
+}
+}
+timesDisponiveis = [...new Set(timesDisponiveis)];
+const correspondencias = timesDisponiveis.filter(t => t.toLowerCase().includes(val));
+if (correspondencias.length > 0) {
+correspondencias.forEach(t => {
+const item = document.createElement('div');
+item.className = 'autocomplete-item';
+item.textContent = t.toUpperCase();
+item.onclick = function() {
+input.value = t.toUpperCase();
+list.style.display = 'none';
+calcular();
+};
+list.appendChild(item);
+});
+list.style.display = 'block';
+} else {
+list.style.display = 'none';
+}
+});
+}
+configurarAutocompletar('time1', 'list-time1');
+configurarAutocompletar('time2', 'list-time2');
+
+const inputs = Array.from(document.querySelectorAll('#inputGroup input'));
+inputs.forEach((input, index) => {
+if (input.type === 'number') {
+input.addEventListener('input', function() {
+this.value = this.value.replace(/[^0-9]/g, '');
+if (this.value.length >= 2) {
+this.value = this.value.slice(0, 2);
+let nextInput = inputs[index + 1];
+while (nextInput && nextInput.style.visibility === 'hidden') {
+index++;
+nextInput = inputs[index + 1];
+}
+if (nextInput) nextInput.focus();
+}
+calcular();
+});
+} else if (input.id !== 'countrySearch') {
+input.addEventListener('input', calcular);
+}
+});
+
+document.addEventListener('focusin', function(e) {
+if (e.target.matches('input, select, textarea')) {
+setTimeout(() => {
+e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}, 350);
+}
+});
+
+function renderizar() {
+let lista = document.getElementById('listaHistorico');
+let html = '';
+let greens = 0, reds = 0;
+for (let date in db) {
+html += `<div style="margin-top:8px; font-weight:bold; color:#a1a1aa; font-size:0.85em;">📅 ${date}</div>`;
+db[date].forEach(i => {
+if(i.status === 'G') greens++; else if(i.status === 'R') reds++;
+html += `<div class="item" style="border-color:${i.status === 'G' ? '#4ade80' : i.status === 'R' ? '#ef4444' : '#3f3f46'}"> ${i.text} <div style="margin-top:6px;"> <button class="btn-hist" style="color:#4ade80; background:#14532d;" onclick="marcar('${date}', ${i.id}, 'G')">✅ Green</button> <button class="btn-hist" style="color:#ef4444; background:#7f1d1d;" onclick="marcar('${date}', ${i.id}, 'R')">🟥 Red</button> <button class="btn-hist" style="color:#a1a1aa; background:#27272a;" onclick="deletar('${date}', ${i.id})">🗑️ Deletar</button> </div> </div>`;
+});
+}
+lista.innerHTML = html || '<p style="color:#a1a1aa; font-size:0.85em;">Nenhum registro salvo.</p>';
+const total = greens + reds;
+const percent = total > 0 ? Math.round((greens / total) * 100) : 50;
+document.getElementById('term-text').innerText = `Assertividade: ${percent}%`;
+document.getElementById('term-bar').style.width = percent + "%";
+atualizarRastreadorEstatisticas();
+renderizarCampeonatos();
+}
+
+function showTab(id) {
+document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.getElementById('btn-' + id).classList.add('active');
+}
+
+function marcar(date, id, status) {
+let item = db[date].find(i => i.id === id);
+if (item) item.status = status;
+localStorage.setItem('kcom_data', JSON.stringify(db));
+renderizar();
+}
+
+function deletar(date, id) {
+db[date] = db[date].filter(i => i.id !== id);
+if (db[date].length === 0) delete db[date];
+localStorage.setItem('kcom_data', JSON.stringify(db));
+renderizar();
+}
+
+function setModoTempo(modo) {
+modoTempoSelecionado = modo;
+document.querySelectorAll('.tempo-btn').forEach(b => b.classList.remove('active'));
+if(modo === 'HT') document.getElementById('btn-mode-ht').classList.add('active');
+if(modo === 'PG') document.getElementById('btn-mode-pg').classList.add('active');
+calcular();
+}
+
+function extrairDadosValidos() {
+let itens = [];
+for (let d in db) {
+db[d].forEach(i => { if (i.dadosBrutos) itens.push(i); });
+}
+return itens;
+}
+
+function obterEstatisticasEquipe(nomeEquipe) {
+if (!nomeEquipe) return null;
+const todosItens = extrairDadosValidos();
+const nomeUpper = nomeEquipe.trim().toUpperCase();
+let partidas = 0;
+let cantosHTSoma = 0;
+let cantosGeralSoma = 0;
+todosItens.forEach(i => {
+const t1 = (i.dadosBrutos.time1 || '').trim().toUpperCase();
+const t2 = (i.dadosBrutos.time2 || '').trim().toUpperCase();
+let cantosEquipe = 0;
+let isEquipeT1 = (t1 === nomeUpper);
+let isEquipeT2 = (t2 === nomeUpper);
+if (isEquipeT1 || isEquipeT2) {
+partidas++;
+const c1 = Number(i.dadosBrutos.cantos1 || 0);
+const c2 = Number(i.dadosBrutos.cantos2 || 0);
+const totalJogo = Number(i.dadosBrutos.cantosTotal || (c1 + c2));
+const min = Number(i.dadosBrutos.minuto || 45);
+if (isEquipeT1 && !isEquipeT2) {
+cantosEquipe = c1;
+} else if (isEquipeT2 && !isEquipeT1) {
+cantosEquipe = c2;
+} else {
+cantosEquipe = totalJogo / 2;
+}
+let htProjetado = min <= 45 ? cantosEquipe : Math.round((cantosEquipe / min) * 45);
+let geralProjetado = Math.round((cantosEquipe / min) * 90);
+cantosHTSoma += htProjetado;
+cantosGeralSoma += geralProjetado;
+}
+});
+if (partidas === 0) return null;
+return {
+partidas,
+mediaHT: (cantosHTSoma / partidas).toFixed(1),
+mediaGeral: (cantosGeralSoma / partidas).toFixed(1)
+};
+}
+
+function atualizarRastreadorEstatisticas() {
+const itens = extrairDadosValidos().filter(i => i.status === 'G');
+if (itens.length === 0) {
+document.getElementById('stat-minutos').innerText = "Janela Recomendada: 15' a 38' (HT)";
+document.getElementById('stat-appm').innerText = "APPM Mínimo: >= 1.00";
+document.getElementById('stat-atq').innerText = "Ataques Perigosos: >= 1 por min";
+document.getElementById('stat-ligas').innerText = "Sem dados de Greens gravados.";
+} else {
+let minSoma = 0, appmSoma = 0, atqSoma = 0;
+itens.forEach(i => {
+minSoma += Number(i.dadosBrutos.minuto);
+appmSoma += Number(i.dadosBrutos.appm);
+atqSoma += (Number(i.dadosBrutos.atq1) + Number(i.dadosBrutos.atq2));
+});
+const total = itens.length;
+document.getElementById('stat-minutos').innerText = `Média: ${(minSoma/total).toFixed(0)}' minutos`;
+document.getElementById('stat-appm').innerText = `APPM Médio nos acertos: ${(appmSoma/total).toFixed(2)}`;
+document.getElementById('stat-atq').innerText = `Média de ${(atqSoma/total).toFixed(0)} ataques perigosos`;
+document.getElementById('stat-ligas').innerText = `${total} Green(s) mapeados no total.`;
+}
+const t1Nome = document.getElementById('time1').value;
+const t2Nome = document.getElementById('time2').value;
+const elConfronto = document.getElementById('stat-confronto');
+const elObsVisor = document.getElementById('obs-confronto');
+if (!t1Nome && !t2Nome) {
+elConfronto.innerHTML = "Digite o nome dos times na Calculadora para consultar o histórico de cada equipe.";
+elObsVisor.innerHTML = "💡 <b>Observação (Histórico):</b> Digite o nome dos times para ver as médias acumuladas.";
+return;
+}
+const st1 = obterEstatisticasEquipe(t1Nome);
+const st2 = obterEstatisticasEquipe(t2Nome);
+let htmlConfronto = "";
+let htmlObsVisor = "💡 <b>Observação (Histórico):</b><br>";
+if (t1Nome) {
+if (st1) {
+let txt1 = `<b>${t1Nome.toUpperCase()}</b> (${st1.partidas} jg): Média HT <b>${st1.mediaHT}</b> | Geral <b>${st1.mediaGeral}</b>`;
+htmlConfronto += txt1 + "<br>";
+htmlObsVisor += "• " + txt1 + "<br>";
+} else {
+htmlConfronto += `<b>${t1Nome.toUpperCase()}</b>: Sem histórico.<br>`;
+htmlObsVisor += `• <b>${t1Nome.toUpperCase()}</b>: Sem histórico recente.<br>`;
+}
+}
+if (t2Nome) {
+if (st2) {
+let txt2 = `<b>${t2Nome.toUpperCase()}</b> (${st2.partidas} jg): Média HT <b>${st2.mediaHT}</b> | Geral <b>${st2.mediaGeral}</b>`;
+htmlConfronto += txt2 + "<br>";
+htmlObsVisor += "• " + txt2 + "<br>";
+} else {
+htmlConfronto += `<b>${t2Nome.toUpperCase()}</b>: Sem histórico.<br>`;
+htmlObsVisor += `• <b>${t2Nome.toUpperCase()}</b>: Sem histórico recente.<br>`;
+}
+}
+if (st1 && st2) {
+const projHT = (Number(st1.mediaHT) + Number(st2.mediaHT)).toFixed(1);
+const projGeral = (Number(st1.mediaGeral) + Number(st2.mediaGeral)).toFixed(1);
+htmlConfronto += `<hr style="border-color:#3f3f46; margin:8px 0;">🎯 <b>MÉDIA ESPERADA DO CONFRONTO:</b><br>`;
+htmlConfronto += `⚡ HT: <b style="color:#4ade80;">${projHT} cantos</b> | 🔥 Geral: <b style="color:#38bdf8;">${projGeral} cantos</b>`;
+htmlObsVisor += `🎯 <b>Média do Confronto:</b> HT <b style="color:#4ade80;">${projHT}</b> | Geral <b style="color:#38bdf8;">${projGeral}</b>`;
+}
+elConfronto.innerHTML = htmlConfronto;
+elObsVisor.innerHTML = htmlObsVisor;
+}
+
+function calcular() {
+const min = parseInt(document.getElementById('minuto').value);
+const c1 = parseInt(document.getElementById('cantos1').value || 0);
+const c2 = parseInt(document.getElementById('cantos2').value || 0);
+const cant = c1 + c2;
+const atq1 = parseInt(document.getElementById('atq1').value || 0);
+const atq2 = parseInt(document.getElementById('atq2').value || 0);
+const atq = atq1 + atq2;
+atualizarRastreadorEstatisticas();
+if (!min || isNaN(cant)) {
+document.getElementById('rastreador-live-box').style.display = 'none';
+return;
+}
+let tempoLimite = (modoTempoSelecionado === 'PG') ? 90 : 45;
+const proj = Math.round((cant / min) * tempoLimite);
+document.getElementById('res-val').innerText = proj + " cantos (" + modoTempoSelecionado + ")";
+document.getElementById('sub-res').innerText = (proj - 0.5).toFixed(1) + " OVER ESCANTEIOS";
+const appmCalculado = (atq / min);
+const appmEl = document.getElementById('appm-res');
+appmEl.innerText = `APPM: ${appmCalculado.toFixed(2)}`;
+appmEl.style.color = appmCalculado < 1.00 ? '#ef4444' : appmCalculado <= 1.10 ? '#fbbf24' : '#4ade80';
+const confiancaCalc = Math.min(Math.round((atq / min) * 100), 99);
+document.getElementById('conf-val').innerText = `Confiança: ${confiancaCalc}%`;
+avaliarRastreadorNoVisor(min, appmCalculado);
+}
+
+function avaliarRastreadorNoVisor(min, appm) {
+const box = document.getElementById('rastreador-live-box');
+const statusEl = document.getElementById('rastreador-status');
+const detailsEl = document.getElementById('rastreador-details');
+box.style.display = 'block';
+let avisos = [];
+let erros = 0;
+if (appm < 1.00) { avisos.push("⚠️ APPM baixo (< 1.00)"); erros++; }
+else { avisos.push("✅ APPM com boa pressão"); }
+if (modoTempoSelecionado === 'HT' && (min < 15 || min > 40)) { avisos.push("⚠️ Minuto fora do pico no HT"); erros++; }
+else { avisos.push("✅ Minuto dentro do padrão"); }
+if (erros === 0) {
+statusEl.style.color = '#4ade80';
+statusEl.innerText = "🛡️ RASTREADOR: ENTRADA SEGURA";
+} else {
+statusEl.style.color = '#fbbf24';
+statusEl.innerText = "⚠️ RASTREADOR: RISCO MODERADO";
+}
+detailsEl.innerHTML = avisos.join('<br>');
+}
+
+function salvarManual() {
+const min = document.getElementById('minuto').value;
+const c1 = document.getElementById('cantos1').value || '0';
+const c2 = document.getElementById('cantos2').value || '0';
+const cTotal = Number(c1) + Number(c2);
+if (!min) {
+alert('Informe ao menos o Minuto da partida.');
+return;
+}
+const date = new Date().toLocaleDateString('pt-BR');
+if (!db[date]) db[date] = [];
+const t1 = (document.getElementById('time1').value.trim() || 'Time A').toUpperCase();
+const t2 = (document.getElementById('time2').value.trim() || 'Time B').toUpperCase();
+const g1 = document.getElementById('gols1').value || 0;
+const g2 = document.getElementById('gols2').value || 0;
+const a1 = document.getElementById('atq1').value || 0;
+const a2 = document.getElementById('atq2').value || 0;
+let tempoLimite = (modoTempoSelecionado === 'PG') ? 90 : 45;
+const proj = Math.round((cTotal / Number(min)) * tempoLimite);
+const projTexto = `${proj} cantos | ${(proj - 0.5).toFixed(1)} over escanteios`;
+const appmCalculado = ((Number(a1) + Number(a2)) / Number(min)) || 0;
+const confiancaCalc = Math.min(Math.round(((Number(a1) + Number(a2)) / Number(min)) * 100), 99) || 0;
+const nomePais = paisSelecionado ? `[${paisSelecionado.fifa}] ${paisSelecionado.nome}` : 'Geral';
+db[date].unshift({
+id: Date.now(),
+text: `<div style="color:#38bdf8; font-weight:bold; font-size:0.85em;">🌍 ${nomePais}</div> <strong>⚽ ${t1} ${g1} x ${g2} ${t2}</strong><br> ⏱️ Min: <b>${min}'</b> | 🚩 Cantos: <b>${c1} + ${c2} = ${cTotal}</b><br> 🎯 Projeção: <b style="color:#4ade80;">${projTexto}</b><br> ⚔️ Atq. Perigoso: <b>${a1} x ${a2}</b> | APPM: <b>${appmCalculado.toFixed(2)}</b> | 🎯 Confiança: <b>${confiancaCalc}%</b>`,
+status: null,
+dadosBrutos: {
+minuto: min,
+time1: t1,
+time2: t2,
+cantos1: c1,
+cantos2: c2,
+cantosTotal: cTotal,
+atq1: a1,
+atq2: a2,
+appm: appmCalculado,
+confianca: confiancaCalc,
+pais: nomePais
+}
+});
+localStorage.setItem('kcom_data', JSON.stringify(db));
+renderizar();
+showTab('hist');
+}
+
+function limparDados() {
+document.querySelectorAll('#inputGroup input').forEach(i => i.value = '');
+document.getElementById('res-val').innerText = "0 cantos";
+document.getElementById('sub-res').innerText = "0.0 cantos";
+document.getElementById('appm-res').innerText = "APPM: 0.00";
+document.getElementById('conf-val').innerText = "Confiança: 0%";
+document.getElementById('obs-confronto').innerHTML = "💡 <b>Observação (Histórico):</b> Digite o nome dos times para ver as médias acumuladas.";
+document.getElementById('rastreador-live-box').style.display = 'none';
+paisSelecionado = null;
+countrySelected.innerHTML = "🌐 Selecionar País / Liga";
+atualizarRastreadorEstatisticas();
+}
+renderizar();
+</script>
+</body>
+</html>
+
