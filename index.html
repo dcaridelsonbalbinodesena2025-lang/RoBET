@@ -486,164 +486,450 @@ const dbPaises = [
   { fifa: "SUL", flag: "un", nome: "🥈 Copa Sul-Americana" },
   { fifa: "MUNI", flag: "un", nome: "⚽ Mundial de Clubes / Interclubes" },
 
-  // ── AMÉRICA DO SUL ─────────────────────────────
-  { fifa: "BRA", flag: "br", nome: "Brasil" },
-  { fifa: "ARG", flag: "ar", nome: "Argentina" },
-  { fifa: "COL", flag: "co", nome: "Colômbia" },
-  { fifa: "URU", flag: "uy", nome: "Uruguai" },
-  { fifa: "CHI", flag: "cl", nome: "Chile" },
-  { fifa: "ECU", flag: "ec", nome: "Equador" },
-  { fifa: "PAR", flag: "py", nome: "Paraguai" },
-  { fifa: "PER", flag: "pe", nome: "Peru" },
-  { fifa: "BOL", flag: "bo", nome: "Bolívia" },
-  { fifa: "VEN", flag: "ve", nome: "Venezuela" },
-  { fifa: "GUY", flag: "gy", nome: "Guiana" },
-  { fifa: "SUR", flag: "sr", nome: "Suriname" },
+  // ── AMÉRICA DO SUL (CONMEBOL + GUIANA / SURINAME) ──
+  { fifa: "BRA", flag: "br", nome: "Brasil Série A" },
+  { fifa: "BRA", flag: "br", nome: "Brasil Série B" },
+
+  { fifa: "ARG", flag: "ar", nome: "Argentina Liga Profesional" },
+  { fifa: "ARG", flag: "ar", nome: "Argentina Primera Nacional" },
+
+  { fifa: "COL", flag: "co", nome: "Colômbia Liga BetPlay" },
+  { fifa: "COL", flag: "co", nome: "Colômbia Torneo BetPlay" },
+
+  { fifa: "URU", flag: "uy", nome: "Uruguai Primera División" },
+  { fifa: "URU", flag: "uy", nome: "Uruguai Segunda División" },
+
+  { fifa: "CHI", flag: "cl", nome: "Chile Primera División" },
+  { fifa: "CHI", flag: "cl", nome: "Chile Primera B" },
+
+  { fifa: "ECU", flag: "ec", nome: "Equador LigaPro Serie A" },
+  { fifa: "ECU", flag: "ec", nome: "Equador LigaPro Serie B" },
+
+  { fifa: "PAR", flag: "py", nome: "Paraguai Primera División" },
+  { fifa: "PAR", flag: "py", nome: "Paraguai División Intermedia" },
+
+  { fifa: "PER", flag: "pe", nome: "Peru Liga 1 Te Apuesto" },
+  { fifa: "PER", flag: "pe", nome: "Peru Liga 2" },
+
+  { fifa: "BOL", flag: "bo", nome: "Bolívia División Profesional" },
+  { fifa: "BOL", flag: "bo", nome: "Bolívia Copa Simón Bolívar" },
+
+  { fifa: "VEN", flag: "ve", nome: "Venezuela Liga FUTVE" },
+  { fifa: "VEN", flag: "ve", nome: "Venezuela Liga FUTVE 2" },
+
+  { fifa: "GUY", flag: "gy", nome: "Guiana GFF Elite League" },
+
+  { fifa: "SUR", flag: "sr", nome: "Suriname Major League" },
+ // ── AMÉRICA DO SUL (CONMEBOL + GUIANA / SURINAME) ──
+  { fifa: "BRA", flag: "br", nome: "Brasil Série A" },
+  { fifa: "BRA", flag: "br", nome: "Brasil Série B" },
+
+  { fifa: "ARG", flag: "ar", nome: "Argentina Liga Profesional" },
+  { fifa: "ARG", flag: "ar", nome: "Argentina Primera Nacional" },
+
+  { fifa: "COL", flag: "co", nome: "Colômbia Liga BetPlay" },
+  { fifa: "COL", flag: "co", nome: "Colômbia Torneo BetPlay" },
+
+  { fifa: "URU", flag: "uy", nome: "Uruguai Primera División" },
+  { fifa: "URU", flag: "uy", nome: "Uruguai Segunda División" },
+
+  { fifa: "CHI", flag: "cl", nome: "Chile Primera División" },
+  { fifa: "CHI", flag: "cl", nome: "Chile Primera B" },
+
+  { fifa: "ECU", flag: "ec", nome: "Equador LigaPro Serie A" },
+  { fifa: "ECU", flag: "ec", nome: "Equador LigaPro Serie B" },
+
+  { fifa: "PAR", flag: "py", nome: "Paraguai Primera División" },
+  { fifa: "PAR", flag: "py", nome: "Paraguai División Intermedia" },
+
+  { fifa: "PER", flag: "pe", nome: "Peru Liga 1 Te Apuesto" },
+  { fifa: "PER", flag: "pe", nome: "Peru Liga 2" },
+
+  { fifa: "BOL", flag: "bo", nome: "Bolívia División Profesional" },
+  { fifa: "BOL", flag: "bo", nome: "Bolívia Copa Simón Bolívar" },
+
+  { fifa: "VEN", flag: "ve", nome: "Venezuela Liga FUTVE" },
+  { fifa: "VEN", flag: "ve", nome: "Venezuela Liga FUTVE 2" },
+
+  { fifa: "GUY", flag: "gy", nome: "Guiana GFF Elite League" },
+
+  { fifa: "SUR", flag: "sr", nome: "Suriname Major League" },
+
 
   // ── EUROPA ─────────────────────────────────────
-  { fifa: "ENG", flag: "gb-eng", nome: "Inglaterra" },
-  { fifa: "ESP", flag: "es", nome: "Espanha" },
-  { fifa: "GER", flag: "de", nome: "Alemanha" },
-  { fifa: "ITA", flag: "it", nome: "Itália" },
-  { fifa: "FRA", flag: "fr", nome: "França" },
-  { fifa: "POR", flag: "pt", nome: "Portugal" },
-  { fifa: "NED", flag: "nl", nome: "Países Baixos" },
-  { fifa: "BEL", flag: "be", nome: "Bélgica" },
-  { fifa: "TUR", flag: "tr", nome: "Turquia" },
-  { fifa: "SCO", flag: "gb-sct", nome: "Escócia" },
-  { fifa: "GRE", flag: "gr", nome: "Grécia" },
-  { fifa: "AUT", flag: "at", nome: "Áustria" },
-  { fifa: "SUI", flag: "ch", nome: "Suíça" },
-  { fifa: "DEN", flag: "dk", nome: "Dinamarca" },
-  { fifa: "NOR", flag: "no", nome: "Noruega" },
-  { fifa: "SWE", flag: "se", nome: "Suécia" },
-  { fifa: "POL", flag: "pl", nome: "Polônia" },
-  { fifa: "CZE", flag: "cz", nome: "República Tcheca" },
-  { fifa: "CRO", flag: "hr", nome: "Croácia" },
-  { fifa: "SRB", flag: "rs", nome: "Sérvia" },
-  { fifa: "UKR", flag: "ua", nome: "Ucrânia" },
-  { fifa: "ROU", flag: "ro", nome: "Romênia" },
-  { fifa: "HUN", flag: "hu", nome: "Hungria" },
-  { fifa: "IRL", flag: "ie", nome: "Irlanda" },
-  { fifa: "NIR", flag: "gb-nir", nome: "Irlanda do Norte" },
-  { fifa: "WAL", flag: "gb-wls", nome: "País de Gales" },
-  { fifa: "FIN", flag: "fi", nome: "Finlândia" },
-  { fifa: "SVK", flag: "sk", nome: "Eslováquia" },
-  { fifa: "SVN", flag: "si", nome: "Eslovênia" },
-  { fifa: "BUL", flag: "bg", nome: "Bulgária" },
-  { fifa: "BIH", flag: "ba", nome: "Bósnia e Herzegovina" },
-  { fifa: "ALB", flag: "al", nome: "Albânia" },
-  { fifa: "MKD", flag: "mk", nome: "Macedônia do Norte" },
-  { fifa: "CYP", flag: "cy", nome: "Chipre" },
-  { fifa: "GEO", flag: "ge", nome: "Geórgia" },
-  { fifa: "ISL", flag: "is", nome: "Islândia" },
-  { fifa: "LUX", flag: "lu", nome: "Luxemburgo" },
-  { fifa: "MNE", flag: "me", nome: "Montenegro" },
-  { fifa: "EST", flag: "ee", nome: "Estônia" },
-  { fifa: "LVA", flag: "lv", nome: "Letônia" },
-  { fifa: "LTU", flag: "lt", nome: "Lituânia" },
-  { fifa: "ARM", flag: "am", nome: "Armênia" },
-  { fifa: "AZE", flag: "az", nome: "Azerbaijão" },
-  { fifa: "KAZ", flag: "kz", nome: "Cazaquistão" },
-  { fifa: "BLR", flag: "by", nome: "Bielorrússia" },
-  { fifa: "MDA", flag: "md", nome: "Moldávia" },
-  { fifa: "MLT", flag: "mt", nome: "Malta" },
-  { fifa: "FRO", flag: "fo", nome: "Ilhas Faroe" },
-  { fifa: "GIB", flag: "gi", nome: "Gibraltar" },
-  { fifa: "AND", flag: "ad", nome: "Andorra" },
-  { fifa: "SMR", flag: "sm", nome: "San Marino" },
-  { fifa: "LIE", flag: "li", nome: "Liechtenstein" },
-  { fifa: "KOS", flag: "xk", nome: "Kosovo" },
+  { fifa: "ENG", flag: "gb-eng", nome: "Inglaterra Premier League" },
+  { fifa: "ENG", flag: "gb-eng", nome: "Inglaterra EFL Championship" },
+
+  { fifa: "ESP", flag: "es", nome: "Espanha LaLiga" },
+  { fifa: "ESP", flag: "es", nome: "Espanha LaLiga 2" },
+
+  { fifa: "GER", flag: "de", nome: "Alemanha Bundesliga" },
+  { fifa: "GER", flag: "de", nome: "Alemanha 2. Bundesliga" },
+
+  { fifa: "ITA", flag: "it", nome: "Itália Serie A" },
+  { fifa: "ITA", flag: "it", nome: "Itália Serie B" },
+
+  { fifa: "FRA", flag: "fr", nome: "França Ligue 1" },
+  { fifa: "FRA", flag: "fr", nome: "França Ligue 2" },
+
+  { fifa: "POR", flag: "pt", nome: "Portugal Liga Portugal" },
+  { fifa: "POR", flag: "pt", nome: "Portugal Liga Portugal 2" },
+
+  { fifa: "NED", flag: "nl", nome: "Países Baixos Eredivisie" },
+  { fifa: "NED", flag: "nl", nome: "Países Baixos Eerste Divisie" },
+
+  { fifa: "BEL", flag: "be", nome: "Bélgica Pro League" },
+  { fifa: "BEL", flag: "be", nome: "Bélgica Challenger Pro League" },
+
+  { fifa: "TUR", flag: "tr", nome: "Turquia Süper Lig" },
+  { fifa: "TUR", flag: "tr", nome: "Turquia 1. Lig" },
+
+  { fifa: "SCO", flag: "gb-sct", nome: "Escócia Scottish Premiership" },
+  { fifa: "SCO", flag: "gb-sct", nome: "Escócia Scottish Championship" },
+
+  { fifa: "GRE", flag: "gr", nome: "Grécia Super League 1" },
+  { fifa: "GRE", flag: "gr", nome: "Grécia Super League 2" },
+
+  { fifa: "AUT", flag: "at", nome: "Áustria Bundesliga" },
+  { fifa: "AUT", flag: "at", nome: "Áustria 2. Liga" },
+
+  { fifa: "SUI", flag: "ch", nome: "Suíça Super League" },
+  { fifa: "SUI", flag: "ch", nome: "Suíça Challenge League" },
+
+  { fifa: "DEN", flag: "dk", nome: "Dinamarca Superliga" },
+  { fifa: "DEN", flag: "dk", nome: "Dinamarca 1. Division" },
+
+  { fifa: "NOR", flag: "no", nome: "Noruega Eliteserien" },
+  { fifa: "NOR", flag: "no", nome: "Noruega OBOS-ligaen" },
+
+  { fifa: "SWE", flag: "se", nome: "Suécia Allsvenskan" },
+  { fifa: "SWE", flag: "se", nome: "Suécia Superettan" },
+
+  { fifa: "POL", flag: "pl", nome: "Polônia Ekstraklasa" },
+  { fifa: "POL", flag: "pl", nome: "Polônia I liga" },
+
+  { fifa: "CZE", flag: "cz", nome: "República Tcheca Chance Liga" },
+  { fifa: "CZE", flag: "cz", nome: "República Tcheca FNL" },
+
+  { fifa: "CRO", flag: "hr", nome: "Croácia HNL" },
+  { fifa: "CRO", flag: "hr", nome: "Croácia Prva NL" },
+
+  { fifa: "SRB", flag: "rs", nome: "Sérvia SuperLiga" },
+  { fifa: "SRB", flag: "rs", nome: "Sérvia Prva Liga" },
+
+  { fifa: "UKR", flag: "ua", nome: "Ucrânia Premier League" },
+  { fifa: "UKR", flag: "ua", nome: "Ucrânia Persha Liga" },
+
+  { fifa: "ROU", flag: "ro", nome: "Romênia SuperLiga" },
+  { fifa: "ROU", flag: "ro", nome: "Romênia Liga II" },
+
+  { fifa: "HUN", flag: "hu", nome: "Hungria NB I" },
+  { fifa: "HUN", flag: "hu", nome: "Hungria NB II" },
+
+  { fifa: "IRL", flag: "ie", nome: "Irlanda Premier Division" },
+  { fifa: "IRL", flag: "ie", nome: "Irlanda First Division" },
+
+  { fifa: "NIR", flag: "gb-nir", nome: "Irlanda do Norte Premiership" },
+  { fifa: "NIR", flag: "gb-nir", nome: "Irlanda do Norte Championship" },
+
+  { fifa: "WAL", flag: "gb-wls", nome: "País de Gales Cymru Premier" },
+  { fifa: "WAL", flag: "gb-wls", nome: "País de Gales Cymru North/South" },
+
+  { fifa: "FIN", flag: "fi", nome: "Finlândia Veikkausliiga" },
+  { fifa: "FIN", flag: "fi", nome: "Finlândia Ykkösliiga" },
+
+  { fifa: "SVK", flag: "sk", nome: "Eslováquia Niké Liga" },
+  { fifa: "SVK", flag: "sk", nome: "Eslováquia 2. Liga" },
+
+  { fifa: "SVN", flag: "si", nome: "Eslovênia PrvaLiga" },
+  { fifa: "SVN", flag: "si", nome: "Eslovênia 2. SNL" },
+
+  { fifa: "BUL", flag: "bg", nome: "Bulgária First League" },
+  { fifa: "BUL", flag: "bg", nome: "Bulgária Second League" },
+
+  { fifa: "BIH", flag: "ba", nome: "Bósnia e Herzegovina Premijer Liga" },
+  { fifa: "BIH", flag: "ba", nome: "Bósnia e Herzegovina Prva Liga" },
+
+  { fifa: "ALB", flag: "al", nome: "Albânia Kategoria Superiore" },
+  { fifa: "ALB", flag: "al", nome: "Albânia Kategoria e Parë" },
+
+  { fifa: "MKD", flag: "mk", nome: "Macedônia do Norte First League" },
+  { fifa: "MKD", flag: "mk", nome: "Macedônia do Norte Second League" },
+
+  { fifa: "CYP", flag: "cy", nome: "Chipre First Division" },
+  { fifa: "CYP", flag: "cy", nome: "Chipre Second Division" },
+
+  { fifa: "GEO", flag: "ge", nome: "Geórgia Erovnuli Liga" },
+  { fifa: "GEO", flag: "ge", nome: "Geórgia Erovnuli Liga 2" },
+
+  { fifa: "ISL", flag: "is", nome: "Islândia Besta deild karla" },
+  { fifa: "ISL", flag: "is", nome: "Islândia 1. deild karla" },
+
+  { fifa: "LUX", flag: "lu", nome: "Luxemburgo National Division" },
+  { fifa: "LUX", flag: "lu", nome: "Luxemburgo Éirepromotioun" },
+
+  { fifa: "MNE", flag: "me", nome: "Montenegro First League" },
+  { fifa: "MNE", flag: "me", nome: "Montenegro Second League" },
+
+  { fifa: "EST", flag: "ee", nome: "Estônia Meistriliiga" },
+  { fifa: "EST", flag: "ee", nome: "Estônia Esiliiga" },
+
+  { fifa: "LVA", flag: "lv", nome: "Letônia Virslīga" },
+  { fifa: "LVA", flag: "lv", nome: "Letônia Nākotnes Līga" },
+
+  { fifa: "LTU", flag: "lt", nome: "Lituânia A Lyga" },
+  { fifa: "LTU", flag: "lt", nome: "Lituânia 1 Lyga" },
+
+  { fifa: "ARM", flag: "am", nome: "Armênia Premier League" },
+  { fifa: "ARM", flag: "am", nome: "Armênia First League" },
+
+  { fifa: "AZE", flag: "az", nome: "Azerbaijão Premier League" },
+  { fifa: "AZE", flag: "az", nome: "Azerbaijão First Division" },
+
+  { fifa: "KAZ", flag: "kz", nome: "Cazaquistão Premier League" },
+  { fifa: "KAZ", flag: "kz", nome: "Cazaquistão First Division" },
+
+  { fifa: "BLR", flag: "by", nome: "Bielorrússia Vysheyshaya Liga" },
+  { fifa: "BLR", flag: "by", nome: "Bielorrússia Pervaya Liga" },
+
+  { fifa: "MDA", flag: "md", nome: "Moldávia Super Liga" },
+  { fifa: "MDA", flag: "md", nome: "Moldávia Liga 1" },
+
+  { fifa: "MLT", flag: "mt", nome: "Malta Premier League" },
+  { fifa: "MLT", flag: "mt", nome: "Malta Challenge League" },
+
+  { fifa: "FRO", flag: "fo", nome: "Ilhas Faroe Premier League" },
+  { fifa: "FRO", flag: "fo", nome: "Ilhas Faroe 1. deild" },
+
+  { fifa: "GIB", flag: "gi", nome: "Gibraltar National League" },
+
+  { fifa: "AND", flag: "ad", nome: "Andorra Primera Divisió" },
+  { fifa: "AND", flag: "ad", nome: "Andorra Segona Divisió" },
+
+  { fifa: "SMR", flag: "sm", nome: "San Marino Campionato Sammarinese" },
+
+  { fifa: "LIE", flag: "li", nome: "Liechtenstein FL Cup" },
+
+  { fifa: "KOS", flag: "xk", nome: "Kosovo Superliga" },
+  { fifa: "KOS", flag: "xk", nome: "Kosovo Liga e Parë" },
 
   // ── AMÉRICA DO NORTE, CENTRAL E CARIBE (CONCACAF) ──
-  { fifa: "USA", flag: "us", nome: "Estados Unidos" },
-  { fifa: "MEX", flag: "mx", nome: "México" },
-  { fifa: "CAN", flag: "ca", nome: "Canadá" },
-  { fifa: "CRC", flag: "cr", nome: "Costa Rica" },
-  { fifa: "PAN", flag: "pa", nome: "Panamá" },
-  { fifa: "JAM", flag: "jm", nome: "Jamaica" },
-  { fifa: "HON", flag: "hn", nome: "Honduras" },
-  { fifa: "GUA", flag: "gt", nome: "Guatemala" },
-  { fifa: "SLV", flag: "sv", nome: "El Salvador" },
-  { fifa: "TRI", flag: "tt", nome: "Trinidad e Tobago" },
-  { fifa: "HTI", flag: "ht", nome: "Haiti" },
-  { fifa: "CUR", flag: "cw", nome: "Curaçau" },
-  { fifa: "NCA", flag: "ni", nome: "Nicarágua" },
-  { fifa: "DOM", flag: "do", nome: "República Dominicana" },
-  { fifa: "CUB", flag: "cu", nome: "Cuba" },
-  { fifa: "PUR", flag: "pr", nome: "Porto Rico" },
-  { fifa: "SUR", flag: "sr", nome: "Suriname" },
+  { fifa: "USA", flag: "us", nome: "Estados Unidos Major League Soccer" },
+  { fifa: "USA", flag: "us", nome: "Estados Unidos USL Championship" },
+
+  { fifa: "MEX", flag: "mx", nome: "México Liga MX" },
+  { fifa: "MEX", flag: "mx", nome: "México Liga de Expansión MX" },
+
+  { fifa: "CAN", flag: "ca", nome: "Canadá Canadian Premier League" },
+  { fifa: "CAN", flag: "ca", nome: "Canadá League1 Canada" },
+
+  { fifa: "CRC", flag: "cr", nome: "Costa Rica Primera División" },
+  { fifa: "CRC", flag: "cr", nome: "Costa Rica Segunda División" },
+
+  { fifa: "PAN", flag: "pa", nome: "Panamá Liga Panameña de Fútbol" },
+  { fifa: "PAN", flag: "pa", nome: "Panamá Liga Prom" },
+
+  { fifa: "JAM", flag: "jm", nome: "Jamaica Premier League" },
+  { fifa: "JAM", flag: "jm", nome: "Jamaica Tier 2" },
+
+  { fifa: "HON", flag: "hn", nome: "Honduras Liga Nacional" },
+  { fifa: "HON", flag: "hn", nome: "Honduras Liga de Ascenso" },
+
+  { fifa: "GUA", flag: "gt", nome: "Guatemala Liga Nacional" },
+  { fifa: "GUA", flag: "gt", nome: "Guatemala Primera División" },
+
+  { fifa: "SLV", flag: "sv", nome: "El Salvador Primera División" },
+  { fifa: "SLV", flag: "sv", nome: "El Salvador Segunda División" },
+
+  { fifa: "TRI", flag: "tt", nome: "Trinidad e Tobago TT Premier Football League" },
+  { fifa: "TRI", flag: "tt", nome: "Trinidad e Tobago TTPFL Tier 2" },
+
+  { fifa: "HTI", flag: "ht", nome: "Haiti Ligue Haïtienne" },
+
+  { fifa: "CUR", flag: "cw", nome: "Curaçau Sekshon Pagá" },
+
+  { fifa: "NCA", flag: "ni", nome: "Nicarágua Liga Primera" },
+  { fifa: "NCA", flag: "ni", nome: "Nicarágua Segunda División" },
+
+  { fifa: "DOM", flag: "do", nome: "República Dominicana Liga Dominicana de Fútbol" },
+
+  { fifa: "CUB", flag: "cu", nome: "Cuba Campeonato Nacional" },
+
+  { fifa: "PUR", flag: "pr", nome: "Porto Rico Liga Puerto Rico" },
+
+  { fifa: "SUR", flag: "sr", nome: "Suriname Major League" },
 
   // ── ÁSIA E ORIENTE MÉDIO (AFC) ─────────────────
-  { fifa: "JPN", flag: "jp", nome: "Japão" },
-  { fifa: "KOR", flag: "kr", nome: "Coreia do Sul" },
-  { fifa: "SAU", flag: "sa", nome: "Arábia Saudita" },
-  { fifa: "AUS", flag: "au", nome: "Austrália" },
-  { fifa: "IRN", flag: "ir", nome: "Irã" },
-  { fifa: "QAT", flag: "qa", nome: "Catar" },
-  { fifa: "UAE", flag: "ae", nome: "Emirados Árabes" },
-  { fifa: "CHN", flag: "cn", nome: "China" },
-  { fifa: "UZB", flag: "uz", nome: "Uzbequistão" },
-  { fifa: "IRQ", flag: "iq", nome: "Iraque" },
-  { fifa: "JOR", flag: "jo", nome: "Jordânia" },
-  { fifa: "OMA", flag: "om", nome: "Omã" },
-  { fifa: "BHR", flag: "bh", nome: "Bahrein" },
-  { fifa: "THA", flag: "th", nome: "Tailândia" },
-  { fifa: "VIE", flag: "vn", nome: "Vietnã" },
-  { fifa: "IDN", flag: "id", nome: "Indonésia" },
-  { fifa: "IND", flag: "in", nome: "Índia" },
-  { fifa: "MAS", flag: "my", nome: "Malásia" },
-  { fifa: "SGP", flag: "sg", nome: "Singapura" },
-  { fifa: "PHL", flag: "ph", nome: "Filipinas" },
-  { fifa: "KUW", flag: "kw", nome: "Kuweit" },
-  { fifa: "SYR", flag: "sy", nome: "Síria" },
-  { fifa: "LBN", flag: "lb", nome: "Líbano" },
-  { fifa: "PLE", flag: "ps", nome: "Palestina" },
-  { fifa: "KGZ", flag: "kg", nome: "Quirguistão" },
-  { fifa: "TJK", flag: "tj", nome: "Tadjiquistão" },
+  { fifa: "JPN", flag: "jp", nome: "Japão J1 League" },
+  { fifa: "JPN", flag: "jp", nome: "Japão J2 League" },
 
-  // ── ÁFRICA (CAF) ───────────────────────────────
-  { fifa: "EGY", flag: "eg", nome: "Egito" },
-  { fifa: "MAR", flag: "ma", nome: "Marrocos" },
-  { fifa: "ALG", flag: "dz", nome: "Argélia" },
-  { fifa: "TUN", flag: "tn", nome: "Tunísia" },
-  { fifa: "NGA", flag: "ng", nome: "Nigéria" },
-  { fifa: "SEN", flag: "sn", nome: "Senegal" },
-  { fifa: "GHA", flag: "gh", nome: "Gana" },
-  { fifa: "CIV", flag: "ci", nome: "Costa do Marfim" },
-  { fifa: "CMR", flag: "cm", nome: "Camarões" },
-  { fifa: "RSA", flag: "za", nome: "África do Sul" },
-  { fifa: "MLI", flag: "ml", nome: "Mali" },
-  { fifa: "BFA", flag: "bf", nome: "Burkina Faso" },
-  { fifa: "COD", flag: "cd", nome: "RD do Congo" },
-  { fifa: "ANG", flag: "ao", nome: "Angola" },
-  { fifa: "ZAM", flag: "zm", nome: "Zâmbia" },
-  { fifa: "CPV", flag: "cv", nome: "Cabo Verde" },
-  { fifa: "GUI", flag: "gn", nome: "Guiné" },
-  { fifa: "EQG", flag: "gq", nome: "Guiné Equatorial" },
-  { fifa: "GAB", flag: "ga", nome: "Gabão" },
-  { fifa: "MOZ", flag: "mz", nome: "Moçambique" },
-  { fifa: "KEN", flag: "ke", nome: "Quênia" },
-  { fifa: "UGA", flag: "ug", nome: "Uganda" },
-  { fifa: "TAN", flag: "tz", nome: "Tanzânia" },
-  { fifa: "LBY", flag: "ly", nome: "Líbia" },
-  { fifa: "SUD", flag: "sd", nome: "Sudão" },
-  { fifa: "BEN", flag: "bj", nome: "Benin" },
-  { fifa: "TOG", flag: "tg", nome: "Togo" },
-  { fifa: "CWR", flag: "cw", nome: "Curaçau" },
+  { fifa: "KOR", flag: "kr", nome: "Coreia do Sul K League 1" },
+  { fifa: "KOR", flag: "kr", nome: "Coreia do Sul K League 2" },
+
+  { fifa: "SAU", flag: "sa", nome: "Arábia Saudita Saudi Pro League" },
+  { fifa: "SAU", flag: "sa", nome: "Arábia Saudita First Division League" },
+
+  { fifa: "AUS", flag: "au", nome: "Austrália A-League Men" },
+
+  { fifa: "IRN", flag: "ir", nome: "Irã Persian Gulf Pro League" },
+  { fifa: "IRN", flag: "ir", nome: "Irã Azadegan League" },
+
+  { fifa: "QAT", flag: "qa", nome: "Catar Stars League" },
+  { fifa: "QAT", flag: "qa", nome: "Catar Second Division" },
+
+  { fifa: "UAE", flag: "ae", nome: "Emirados Árabes Pro League" },
+  { fifa: "UAE", flag: "ae", nome: "Emirados Árabes First Division" },
+
+  { fifa: "CHN", flag: "cn", nome: "China Super League" },
+  { fifa: "CHN", flag: "cn", nome: "China League One" },
+
+  { fifa: "UZB", flag: "uz", nome: "Uzbequistão Super League" },
+  { fifa: "UZB", flag: "uz", nome: "Uzbequistão Pro League" },
+
+  { fifa: "IRQ", flag: "iq", nome: "Iraque Stars League" },
+  { fifa: "IRQ", flag: "iq", nome: "Iraque Premier Division" },
+
+  { fifa: "JOR", flag: "jo", nome: "Jordânia Pro League" },
+  { fifa: "JOR", flag: "jo", nome: "Jordânia First Division" },
+
+  { fifa: "OMA", flag: "om", nome: "Omã Professional League" },
+  { fifa: "OMA", flag: "om", nome: "Omã First Division" },
+
+  { fifa: "BHR", flag: "bh", nome: "Bahrein Premier League" },
+  { fifa: "BHR", flag: "bh", nome: "Bahrein Second Division" },
+
+  { fifa: "THA", flag: "th", nome: "Tailândia Thai League 1" },
+  { fifa: "THA", flag: "th", nome: "Tailândia Thai League 2" },
+
+  { fifa: "VIE", flag: "vn", nome: "Vietnã V.League 1" },
+  { fifa: "VIE", flag: "vn", nome: "Vietnã V.League 2" },
+
+  { fifa: "IDN", flag: "id", nome: "Indonésia Liga 1" },
+  { fifa: "IDN", flag: "id", nome: "Indonésia Liga 2" },
+
+  { fifa: "IND", flag: "in", nome: "Índia Indian Super League" },
+  { fifa: "IND", flag: "in", nome: "Índia I-League" },
+
+  { fifa: "MAS", flag: "my", nome: "Malásia Super League" },
+
+  { fifa: "SGP", flag: "sg", nome: "Singapura Premier League" },
+
+  { fifa: "PHL", flag: "ph", nome: "Filipinas Football League" },
+
+  { fifa: "KUW", flag: "kw", nome: "Kuweit Premier League" },
+  { fifa: "KUW", flag: "kw", nome: "Kuweit Division 1" },
+
+  { fifa: "SYR", flag: "sy", nome: "Síria Premier League" },
+
+  { fifa: "LBN", flag: "lb", nome: "Líbano Premier League" },
+  { fifa: "LBN", flag: "lb", nome: "Líbano Second Division" },
+
+  { fifa: "PLE", flag: "ps", nome: "Palestina West Bank Premier League" },
+
+  { fifa: "KGZ", flag: "kg", nome: "Quirguistão Premier League" },
+  { fifa: "KGZ", flag: "kg", nome: "Quirguistão National League" },
+
+  { fifa: "TJK", flag: "tj", nome: "Tadjiquistão Higher League" },
+  { fifa: "TJK", flag: "tj", nome: "Tadjiquistão First League" },
+
+ // ── ÁFRICA (CAF) ───────────────────────────────
+  { fifa: "EGY", flag: "eg", nome: "Egito Egyptian Premier League" },
+  { fifa: "EGY", flag: "eg", nome: "Egito Egyptian Second Division A" },
+
+  { fifa: "MAR", flag: "ma", nome: "Marrocos Botola Pro 1" },
+  { fifa: "MAR", flag: "ma", nome: "Marrocos Botola Pro 2" },
+
+  { fifa: "ALG", flag: "dz", nome: "Argélia Ligue 1" },
+  { fifa: "ALG", flag: "dz", nome: "Argélia Ligue 2" },
+
+  { fifa: "TUN", flag: "tn", nome: "Tunísia Ligue Professionnelle 1" },
+  { fifa: "TUN", flag: "tn", nome: "Tunísia Ligue Professionnelle 2" },
+
+  { fifa: "NGA", flag: "ng", nome: "Nigéria NPFL" },
+  { fifa: "NGA", flag: "ng", nome: "Nigéria NNL" },
+
+  { fifa: "SEN", flag: "sn", nome: "Senegal Ligue 1" },
+  { fifa: "SEN", flag: "sn", nome: "Senegal Ligue 2" },
+
+  { fifa: "GHA", flag: "gh", nome: "Gana Ghana Premier League" },
+  { fifa: "GHA", flag: "gh", nome: "Gana Division One League" },
+
+  { fifa: "CIV", flag: "ci", nome: "Costa do Marfim Ligue 1" },
+  { fifa: "CIV", flag: "ci", nome: "Costa do Marfim Ligue 2" },
+
+  { fifa: "CMR", flag: "cm", nome: "Camarões Elite One" },
+  { fifa: "CMR", flag: "cm", nome: "Camarões Elite Two" },
+
+  { fifa: "RSA", flag: "za", nome: "África do Sul Premiership" },
+  { fifa: "RSA", flag: "za", nome: "África do Sul National First Division" },
+
+  { fifa: "MLI", flag: "ml", nome: "Mali Première Division" },
+
+  { fifa: "BFA", flag: "bf", nome: "Burkina Faso Ligue 1" },
+  { fifa: "BFA", flag: "bf", nome: "Burkina Faso Ligue 2" },
+
+  { fifa: "COD", flag: "cd", nome: "RD do Congo Linafoot Ligue 1" },
+  { fifa: "COD", flag: "cd", nome: "RD do Congo Linafoot Ligue 2" },
+
+  { fifa: "ANG", flag: "ao", nome: "Angola Girabola" },
+
+  { fifa: "ZAM", flag: "zm", nome: "Zâmbia Super League" },
+  { fifa: "ZAM", flag: "zm", nome: "Zâmbia National Division One" },
+
+  { fifa: "CPV", flag: "cv", nome: "Cabo Verde Campeonato Nacional" },
+
+  { fifa: "GUI", flag: "gn", nome: "Guiné Ligue 1 Pro" },
+  { fifa: "GUI", flag: "gn", nome: "Guiné Ligue 2 Pro" },
+
+  { fifa: "EQG", flag: "gq", nome: "Guiné Equatorial Primera División" },
+
+  { fifa: "GAB", flag: "ga", nome: "Gabão National Foot 1" },
+  { fifa: "GAB", flag: "ga", nome: "Gabão National Foot 2" },
+
+  { fifa: "MOZ", flag: "mz", nome: "Moçambique Moçambola" },
+
+  { fifa: "KEN", flag: "ke", nome: "Quênia FKF Premier League" },
+  { fifa: "KEN", flag: "ke", nome: "Quênia National Super League" },
+
+  { fifa: "UGA", flag: "ug", nome: "Uganda Premier League" },
+  { fifa: "UGA", flag: "ug", nome: "Uganda FUFA Big League" },
+
+  { fifa: "TAN", flag: "tz", nome: "Tanzânia Premier League" },
+  { fifa: "TAN", flag: "tz", nome: "Tanzânia Championship" },
+
+  { fifa: "LBY", flag: "ly", nome: "Líbia Premier League" },
+
+  { fifa: "SUD", flag: "sd", nome: "Sudão Premier League" },
+
+  { fifa: "BEN", flag: "bj", nome: "Benin Championnat National" },
+
+  { fifa: "TOG", flag: "tg", nome: "Togo Championnat National" },
+  { fifa: "TOG", flag: "tg", nome: "Togo Deuxième Division" },
+
+  { fifa: "CUW", flag: "cw", nome: "Curaçau Sekshon Pagá" },
 
   // ── OCEANIA (OFC) ──────────────────────────────
-  { fifa: "NZL", flag: "nz", nome: "Nova Zelândia" },
-  { fifa: "FIJ", flag: "fj", nome: "Fiji" },
-  { fifa: "NCA", flag: "nc", nome: "Nova Caledônia" },
-  { fifa: "TAH", flag: "pf", nome: "Taiti" },
-  { fifa: "SOL", flag: "sb", nome: "Ilhas Salomão" },
-  { fifa: "PNG", flag: "pg", nome: "Papua-Nova Guiné" }
+  { fifa: "NZL", flag: "nz", nome: "Nova Zelândia National League" },
+  { fifa: "NZL", flag: "nz", nome: "Nova Zelândia Northern/Central/Southern Leagues" },
+
+  { fifa: "FIJ", flag: "fj", nome: "Fiji Premier League" },
+  { fifa: "FIJ", flag: "fj", nome: "Fiji Senior League" },
+
+  { fifa: "NCA", flag: "nc", nome: "Nova Caledônia Super Ligue" },
+
+  { fifa: "TAH", flag: "pf", nome: "Taiti Ligue 1 Vini" },
+  { fifa: "TAH", flag: "pf", nome: "Taiti Ligue 2" },
+
+  { fifa: "SOL", flag: "sb", nome: "Ilhas Salomão Telekom S-League" },
+
+  { fifa: "PNG", flag: "pg", nome: "Papua-Nova Guiné Premier Soccer League" },
 ];
+
 let paisSelecionado = null;
 let db = JSON.parse(localStorage.getItem('kcom_data') || '{}');
 let dbCampeonatos = JSON.parse(localStorage.getItem('kcom_campeonatos') || '{}');
 let modoTempoSelecionado = 'HT';
+
 const countryBtn = document.getElementById('countryBtn');
 const countryDropdown = document.getElementById('countryDropdown');
 const countrySearch = document.getElementById('countrySearch');
@@ -651,465 +937,645 @@ const countryList = document.getElementById('countryList');
 const countrySelected = document.getElementById('countrySelected');
 
 function renderPaises(lista) {
-countryList.innerHTML = '';
-const selectPaisElem = document.getElementById('campPais');
-selectPaisElem.innerHTML = '<option value="">Selecione o País</option>';
-lista.forEach(p => {
-const item = document.createElement('div');
-item.className = 'country-item';
-item.innerHTML = `<img src="https://flagcdn.com/w20/${p.flag}.png" class="flag-img"> <b style="color:#38bdf8; width:32px;">${p.fifa}</b> <span>${p.nome}</span>`;
-item.onclick = () => {
-paisSelecionado = p;
-countrySelected.innerHTML = `<img src="https://flagcdn.com/w20/${p.flag}.png" class="flag-img"> <b style="color:#38bdf8;">[${p.fifa}]</b> ${p.nome}`;
-countryDropdown.classList.remove('open');
-};
-countryList.appendChild(item);
-const opt = document.createElement('option');
-opt.value = p.nome;
-opt.textContent = p.nome;
-selectPaisElem.appendChild(opt);
-});
+    countryList.innerHTML = '';
+    const selectPaisElem = document.getElementById('campPais');
+    selectPaisElem.innerHTML = '<option value="">Selecione o País</option>';
+
+    lista.forEach(p => {
+        const item = document.createElement('div');
+        item.className = 'country-item';
+        item.innerHTML = `
+            <img src="https://flagcdn.com/w20/${p.flag}.png" class="flag-img">
+            <b style="color:#38bdf8; width:32px;">${p.fifa}</b>
+            <span>${p.nome}</span>
+        `;
+        item.onclick = () => {
+            paisSelecionado = p;
+            countrySelected.innerHTML = `<img src="https://flagcdn.com/w20/${p.flag}.png" class="flag-img"> <b style="color:#38bdf8;">[${p.fifa}]</b> ${p.nome}`;
+            countryDropdown.classList.remove('open');
+        };
+        countryList.appendChild(item);
+
+        const opt = document.createElement('option');
+        opt.value = p.nome;
+        opt.textContent = p.nome;
+        selectPaisElem.appendChild(opt);
+    });
 }
+
 renderPaises(dbPaises);
 
 countryBtn.onclick = () => {
-countryDropdown.classList.toggle('open');
-if (countryDropdown.classList.contains('open')) {
-countrySearch.value = '';
-renderPaises(dbPaises);
-countrySearch.focus();
-}
+    countryDropdown.classList.toggle('open');
+    if (countryDropdown.classList.contains('open')) {
+        countrySearch.value = '';
+        renderPaises(dbPaises);
+        countrySearch.focus();
+    }
 };
 
 countrySearch.oninput = (e) => {
-const t = e.target.value.toLowerCase();
-renderPaises(dbPaises.filter(p => p.nome.toLowerCase().includes(t) || p.fifa.toLowerCase().includes(t)));
+    const t = e.target.value.toLowerCase();
+    renderPaises(dbPaises.filter(p => p.nome.toLowerCase().includes(t) || p.fifa.toLowerCase().includes(t)));
 };
 
 document.addEventListener('click', (e) => {
-if (!countryBtn.contains(e.target) && !countryDropdown.contains(e.target)) {
-countryDropdown.classList.remove('open');
-}
-if (!e.target.closest('.autocomplete-wrapper')) {
-document.querySelectorAll('.autocomplete-list').forEach(l => l.style.display = 'none');
-}
+    if (!countryBtn.contains(e.target) && !countryDropdown.contains(e.target)) {
+        countryDropdown.classList.remove('open');
+    }
+    if (!e.target.closest('.autocomplete-wrapper')) {
+        document.querySelectorAll('.autocomplete-list').forEach(l => l.style.display = 'none');
+    }
 });
 
 function copiarComando() {
-const texto = document.getElementById('textoComando').innerText;
-navigator.clipboard.writeText(texto).then(() => {
-alert('Frase copiada com sucesso! Agora é só colar para o Gemini.');
-}).catch(err => {
-alert('Erro ao copiar frase: ' + err);
-});
+    const texto = document.getElementById('textoComando').innerText;
+    navigator.clipboard.writeText(texto).then(() => {
+        alert('Frase copiada com sucesso! Agora é só colar para o Gemini.');
+    }).catch(err => {
+        alert('Erro ao copiar frase: ' + err);
+    });
 }
 
 function processarListaTimes(textoBruto) {
-return textoBruto
-.split(/[\n,]+/)
-.map(t => t.trim().replace(/^[0-9]+\s*[.-–)]\s*/, ''))
-.filter(t => t.length > 0);
+    return textoBruto
+        .split(/[\n,]+/)
+        .map(t => t.trim().replace(/^[0-9]+\s*[\.\-–\)]\s*/, ''))
+        .filter(t => t.length > 0);
 }
 
 function registrarCampeonato() {
-const nome = document.getElementById('campNome').value.trim();
-const pais = document.getElementById('campPais').value;
-const listaTexto = document.getElementById('campLista').value;
-if (!nome || !pais || !listaTexto) {
-alert('Preencha o Nome do Campeonato, País e a Lista de Times.');
-return;
-}
-const times = processarListaTimes(listaTexto);
-dbCampeonatos[nome] = {
-nome: nome,
-pais: pais,
-times: times
-};
-localStorage.setItem('kcom_campeonatos', JSON.stringify(dbCampeonatos));
-alert(`Campeonato "${nome}" registrado com sucesso com ${times.length} times!`);
-renderizarCampeonatos();
-limparFormCampeonato();
+    const nome = document.getElementById('campNome').value.trim();
+    const pais = document.getElementById('campPais').value;
+    const listaTexto = document.getElementById('campLista').value;
+
+    if (!nome || !pais || !listaTexto) {
+        alert('Preencha o Nome do Campeonato, País e a Lista de Times.');
+        return;
+    }
+
+    const times = processarListaTimes(listaTexto);
+
+    dbCampeonatos[nome] = {
+        nome: nome,
+        pais: pais,
+        times: times
+    };
+
+    localStorage.setItem('kcom_campeonatos', JSON.stringify(dbCampeonatos));
+    alert(`Campeonato "${nome}" registrado com sucesso com ${times.length} times!`);
+    renderizarCampeonatos();
+    limparFormCampeonato();
 }
 
 function atualizarCampeonato() {
-registrarCampeonato();
+    registrarCampeonato();
 }
 
 function deletarCampeonato(nome) {
-if (confirm(`Deseja deletar o campeonato ${nome}?`)) {
-delete dbCampeonatos[nome];
-localStorage.setItem('kcom_campeonatos', JSON.stringify(dbCampeonatos));
-renderizarCampeonatos();
-}
+    if (confirm(`Deseja deletar o campeonato ${nome}?`)) {
+        delete dbCampeonatos[nome];
+        localStorage.setItem('kcom_campeonatos', JSON.stringify(dbCampeonatos));
+        renderizarCampeonatos();
+    }
 }
 
 function carregarParaEdicao(nome) {
-const c = dbCampeonatos[nome];
-if (c) {
-document.getElementById('campNome').value = c.nome;
-document.getElementById('campPais').value = c.pais;
-document.getElementById('campLista').value = c.times.join('\n');
-}
+    const c = dbCampeonatos[nome];
+    if (c) {
+        document.getElementById('campNome').value = c.nome;
+        document.getElementById('campPais').value = c.pais;
+        document.getElementById('campLista').value = c.times.join('\n');
+    }
 }
 
 function limparFormCampeonato() {
-document.getElementById('campNome').value = '';
-document.getElementById('campPais').value = '';
-document.getElementById('campLista').value = '';
+    document.getElementById('campNome').value = '';
+    document.getElementById('campPais').value = '';
+    document.getElementById('campLista').value = '';
 }
 
 function renderizarCampeonatos() {
-const container = document.getElementById('listaCampeonatosCadastrados');
-let html = '';
-for (let c in dbCampeonatos) {
-const item = dbCampeonatos[c];
-html += `<div class="item" style="border-color:#38bdf8;"> <div style="display:flex; justify-content:space-between; align-items:center;"> <div> <strong style="color:#4ade80;">${item.nome}</strong> (${item.pais})<br> <small style="color:#a1a1aa;">${item.times.length} times: ${item.times.slice(0, 4).join(', ')}...</small> </div> </div> <div style="margin-top:8px;"> <button class="btn-hist" style="color:#38bdf8; background:#1e3a8a;" onclick="carregarParaEdicao('${item.nome}')">✏️ Editar</button> <button class="btn-hist" style="color:#ef4444; background:#7f1d1d;" onclick="deletarCampeonato('${item.nome}')">🗑️ Deletar</button> </div> </div>`;
-}
-container.innerHTML = html || '<p style="color:#a1a1aa;">Nenhum campeonato registrado ainda.</p>';
+    const container = document.getElementById('listaCampeonatosCadastrados');
+    let html = '';
+
+    for (let c in dbCampeonatos) {
+        const item = dbCampeonatos[c];
+        html += `
+            <div class="item" style="border-color:#38bdf8;">
+                <div style="display:flex; justify-between; align-items:center;">
+                    <div>
+                        <strong style="color:#4ade80;">${item.nome}</strong> (${item.pais})<br>
+                        <small style="color:#a1a1aa;">${item.times.length} times: ${item.times.slice(0, 4).join(', ')}...</small>
+                    </div>
+                </div>
+                <div style="margin-top:8px;">
+                    <button class="btn-hist" style="color:#38bdf8; background:#1e3a8a;" onclick="carregarParaEdicao('${item.nome}')">✏️ Editar</button>
+                    <button class="btn-hist" style="color:#ef4444; background:#7f1d1d;" onclick="deletarCampeonato('${item.nome}')">🗑️ Deletar</button>
+                </div>
+            </div>
+        `;
+    }
+
+    container.innerHTML = html || '<p style="color:#a1a1aa;">Nenhum campeonato registrado ainda.</p>';
 }
 
 function configurarAutocompletar(inputId, listId) {
-const input = document.getElementById(inputId);
-const list = document.getElementById(listId);
-input.addEventListener('input', function() {
-const val = this.value.trim().toLowerCase();
-list.innerHTML = '';
-if (val.length < 2) {
-list.style.display = 'none';
-return;
+    const input = document.getElementById(inputId);
+    const list = document.getElementById(listId);
+
+    input.addEventListener('input', function() {
+        const val = this.value.trim().toLowerCase();
+        list.innerHTML = '';
+
+        if (val.length < 2) {
+            list.style.display = 'none';
+            return;
+        }
+
+        let timesDisponiveis = [];
+        for (let c in dbCampeonatos) {
+            const camp = dbCampeonatos[c];
+            if (!paisSelecionado || camp.pais.toLowerCase() === paisSelecionado.nome.toLowerCase()) {
+                timesDisponiveis = timesDisponiveis.concat(camp.times);
+            }
+        }
+
+        if (timesDisponiveis.length === 0) {
+            for (let c in dbCampeonatos) {
+                timesDisponiveis = timesDisponiveis.concat(dbCampeonatos[c].times);
+            }
+        }
+
+        timesDisponiveis = [...new Set(timesDisponiveis)];
+
+        const correspondencias = timesDisponiveis.filter(t => t.toLowerCase().includes(val));
+
+        if (correspondencias.length > 0) {
+            correspondencias.forEach(t => {
+                const item = document.createElement('div');
+                item.className = 'autocomplete-item';
+                item.textContent = t.toUpperCase();
+                item.onclick = function() {
+                    input.value = t.toUpperCase();
+                    list.style.display = 'none';
+                    calcular();
+                };
+                list.appendChild(item);
+            });
+            list.style.display = 'block';
+        } else {
+            list.style.display = 'none';
+        }
+    });
 }
-let timesDisponiveis = [];
-for (let c in dbCampeonatos) {
-const camp = dbCampeonatos[c];
-if (!paisSelecionado || camp.pais.toLowerCase() === paisSelecionado.nome.toLowerCase()) {
-timesDisponiveis = timesDisponiveis.concat(camp.times);
-}
-}
-if (timesDisponiveis.length === 0) {
-for (let c in dbCampeonatos) {
-timesDisponiveis = timesDisponiveis.concat(dbCampeonatos[c].times);
-}
-}
-timesDisponiveis = [...new Set(timesDisponiveis)];
-const correspondencias = timesDisponiveis.filter(t => t.toLowerCase().includes(val));
-if (correspondencias.length > 0) {
-correspondencias.forEach(t => {
-const item = document.createElement('div');
-item.className = 'autocomplete-item';
-item.textContent = t.toUpperCase();
-item.onclick = function() {
-input.value = t.toUpperCase();
-list.style.display = 'none';
-calcular();
-};
-list.appendChild(item);
-});
-list.style.display = 'block';
-} else {
-list.style.display = 'none';
-}
-});
-}
+
 configurarAutocompletar('time1', 'list-time1');
 configurarAutocompletar('time2', 'list-time2');
 
 const inputs = Array.from(document.querySelectorAll('#inputGroup input'));
 inputs.forEach((input, index) => {
-if (input.type === 'number') {
-input.addEventListener('input', function() {
-this.value = this.value.replace(/[^0-9]/g, '');
-if (this.value.length >= 2) {
-this.value = this.value.slice(0, 2);
-let nextInput = inputs[index + 1];
-while (nextInput && nextInput.style.visibility === 'hidden') {
-index++;
-nextInput = inputs[index + 1];
-}
-if (nextInput) nextInput.focus();
-}
-calcular();
-});
-} else if (input.id !== 'countrySearch') {
-input.addEventListener('input', calcular);
-}
+    if (input.type === 'number') {
+        input.addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9]/g, '');
+            
+            if (this.id === 'cantos1' && this.value.length >= 2) {
+                this.value = this.value.slice(0, 2);
+                let nextInput = document.getElementById('cantos2');
+                if (nextInput) nextInput.focus();
+            } else if (this.value.length >= 2) {
+                this.value = this.value.slice(0, 2);
+                let nextInput = inputs[index + 1];
+                while (nextInput && nextInput.style.visibility === 'hidden') {
+                    index++;
+                    nextInput = inputs[index + 1];
+                }
+                if (nextInput) nextInput.focus();
+            }
+            calcular();
+        });
+    } else if (input.id !== 'countrySearch') {
+        input.addEventListener('input', calcular);
+    }
 });
 
 document.addEventListener('focusin', function(e) {
-if (e.target.matches('input, select, textarea')) {
-setTimeout(() => {
-e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}, 350);
-}
+    if (e.target.matches('input, select, textarea')) {
+        setTimeout(() => {
+            e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 350);
+    }
 });
 
 function renderizar() {
-let lista = document.getElementById('listaHistorico');
-let html = '';
-let greens = 0, reds = 0;
-for (let date in db) {
-html += `<div style="margin-top:8px; font-weight:bold; color:#a1a1aa; font-size:0.85em;">📅 ${date}</div>`;
-db[date].forEach(i => {
-if(i.status === 'G') greens++; else if(i.status === 'R') reds++;
-html += `<div class="item" style="border-color:${i.status === 'G' ? '#4ade80' : i.status === 'R' ? '#ef4444' : '#3f3f46'}"> ${i.text} <div style="margin-top:6px;"> <button class="btn-hist" style="color:#4ade80; background:#14532d;" onclick="marcar('${date}', ${i.id}, 'G')">✅ Green</button> <button class="btn-hist" style="color:#ef4444; background:#7f1d1d;" onclick="marcar('${date}', ${i.id}, 'R')">🟥 Red</button> <button class="btn-hist" style="color:#a1a1aa; background:#27272a;" onclick="deletar('${date}', ${i.id})">🗑️ Deletar</button> </div> </div>`;
-});
+    let lista = document.getElementById('listaHistorico');
+    let html = '';
+    let greens = 0, reds = 0;
+
+    for (let date in db) {
+        html += `<div style="margin-top:8px; font-weight:bold; color:#a1a1aa; font-size:0.85em;">📅 ${date}</div>`;
+        db[date].forEach(i => {
+            if(i.status === 'G') greens++; else if(i.status === 'R') reds++;
+            
+            let cf1Val = i.dadosBrutos.cantos1Final !== undefined && i.dadosBrutos.cantos1Final !== null ? i.dadosBrutos.cantos1Final : '';
+            let cf2Val = i.dadosBrutos.cantos2Final !== undefined && i.dadosBrutos.cantos2Final !== null ? i.dadosBrutos.cantos2Final : '';
+
+            html += `
+                <div class="item" style="border-color:${i.status === 'G' ? '#4ade80' : i.status === 'R' ? '#ef4444' : '#3f3f46'}">
+                    ${i.text}
+                    
+                    <div style="margin-top:8px; padding:6px; background:#000000; border-radius:6px; display:flex; align-items:center; justify-content:space-between; gap:6px;">
+                        <span style="font-size:0.75em; color:#38bdf8; font-weight:bold;">🚩 Cantos Finais (2x cliques p/ editar):</span>
+                        <div style="display:flex; align-items:center; gap:4px;">
+                            <input type="number" id="cf1_${i.id}" value="${cf1Val}" placeholder="T1" readonly 
+                                   ondblclick="destravarInputs(this, ${i.id})" 
+                                   onblur="travarInputs(${i.id}); atualizarCantosFinais('${date}', ${i.id})" 
+                                   oninput="controlarDigitosCantosFinais(this, 'cf2_${i.id}'); atualizarCantosFinais('${date}', ${i.id})" 
+                                   style="width: 45px; padding: 4px; background: #1e293b; color: #fff; border: 1px solid #334155; border-radius: 4px; text-align: center; font-size: 0.85em; cursor: pointer;">
+                            <span>x</span>
+                            <input type="number" id="cf2_${i.id}" value="${cf2Val}" placeholder="T2" readonly 
+                                   ondblclick="destravarInputs(this, ${i.id})" 
+                                   onblur="travarInputs(${i.id}); atualizarCantosFinais('${date}', ${i.id})" 
+                                   oninput="controlarDigitosCantosFinais(this, null); atualizarCantosFinais('${date}', ${i.id})" 
+                                   style="width: 45px; padding: 4px; background: #1e293b; color: #fff; border: 1px solid #334155; border-radius: 4px; text-align: center; font-size: 0.85em; cursor: pointer;">
+                        </div>
+                    </div>
+
+                    <div style="margin-top:6px;">
+                        <button class="btn-hist" style="color:#4ade80; background:#14532d;" onclick="marcar('${date}', ${i.id}, 'G')">✅ Green</button>
+                        <button class="btn-hist" style="color:#ef4444; background:#7f1d1d;" onclick="marcar('${date}', ${i.id}, 'R')">🟥 Red</button>
+                        <button class="btn-hist" style="color:#a1a1aa; background:#27272a;" onclick="deletar('${date}', ${i.id})">🗑️ Deletar</button>
+                    </div>
+                </div>`;
+        });
+    }
+    lista.innerHTML = html || '<p style="color:#a1a1aa; font-size:0.85em;">Nenhum registro salvo.</p>';
+    
+    const total = greens + reds;
+    const percent = total > 0 ? Math.round((greens / total) * 100) : 50;
+    document.getElementById('term-text').innerText = `Assertividade: ${percent}%`;
+    document.getElementById('term-bar').style.width = percent + "%";
+
+    atualizarRastreadorEstatisticas();
+    renderizarCampeonatos();
 }
-lista.innerHTML = html || '<p style="color:#a1a1aa; font-size:0.85em;">Nenhum registro salvo.</p>';
-const total = greens + reds;
-const percent = total > 0 ? Math.round((greens / total) * 100) : 50;
-document.getElementById('term-text').innerText = `Assertividade: ${percent}%`;
-document.getElementById('term-bar').style.width = percent + "%";
-atualizarRastreadorEstatisticas();
-renderizarCampeonatos();
+
+function destravarInputs(input, id) {
+    let input1 = document.getElementById(`cf1_${id}`);
+    let input2 = document.getElementById(`cf2_${id}`);
+    
+    input1.removeAttribute('readonly');
+    input1.style.borderColor = '#6366f1';
+    
+    input2.removeAttribute('readonly');
+    input2.style.borderColor = '#6366f1';
+    
+    input.focus();
+}
+
+function travarInputs(id) {
+    let input1 = document.getElementById(`cf1_${id}`);
+    let input2 = document.getElementById(`cf2_${id}`);
+    
+    input1.setAttribute('readonly', 'true');
+    input1.style.borderColor = '#334155';
+    
+    input2.setAttribute('readonly', 'true');
+    input2.style.borderColor = '#334155';
+}
+
+function controlarDigitosCantosFinais(input, proximoId) {
+    input.value = input.value.replace(/[^0-9]/g, '');
+    if (input.value.length >= 2) {
+        input.value = input.value.slice(0, 2);
+        if (proximoId) {
+            let nextInput = document.getElementById(proximoId);
+            if (nextInput) nextInput.focus();
+        }
+    }
+}
+
+function atualizarCantosFinais(date, id) {
+    let item = db[date].find(i => i.id === id);
+    if (item) {
+        let val1 = parseInt(document.getElementById(`cf1_${id}`).value);
+        let val2 = parseInt(document.getElementById(`cf2_${id}`).value);
+
+        item.dadosBrutos.cantos1Final = !isNaN(val1) ? val1 : null;
+        item.dadosBrutos.cantos2Final = !isNaN(val2) ? val2 : null;
+        item.dadosBrutos.cantosTotalFinal = (!isNaN(val1) && !isNaN(val2)) ? (val1 + val2) : null;
+
+        localStorage.setItem('kcom_data', JSON.stringify(db));
+        atualizarRastreadorEstatisticas(); 
+    }
 }
 
 function showTab(id) {
-document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-document.getElementById('btn-' + id).classList.add('active');
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.getElementById('btn-' + id).classList.add('active');
 }
 
 function marcar(date, id, status) {
-let item = db[date].find(i => i.id === id);
-if (item) item.status = status;
-localStorage.setItem('kcom_data', JSON.stringify(db));
-renderizar();
+    let item = db[date].find(i => i.id === id);
+    if (item) item.status = status;
+    localStorage.setItem('kcom_data', JSON.stringify(db));
+    renderizar();
 }
 
 function deletar(date, id) {
-db[date] = db[date].filter(i => i.id !== id);
-if (db[date].length === 0) delete db[date];
-localStorage.setItem('kcom_data', JSON.stringify(db));
-renderizar();
+    db[date] = db[date].filter(i => i.id !== id);
+    if (db[date].length === 0) delete db[date];
+    localStorage.setItem('kcom_data', JSON.stringify(db));
+    renderizar();
 }
 
 function setModoTempo(modo) {
-modoTempoSelecionado = modo;
-document.querySelectorAll('.tempo-btn').forEach(b => b.classList.remove('active'));
-if(modo === 'HT') document.getElementById('btn-mode-ht').classList.add('active');
-if(modo === 'PG') document.getElementById('btn-mode-pg').classList.add('active');
-calcular();
+    modoTempoSelecionado = modo;
+    document.querySelectorAll('.tempo-btn').forEach(b => b.classList.remove('active'));
+    if(modo === 'HT') document.getElementById('btn-mode-ht').classList.add('active');
+    if(modo === 'PG') document.getElementById('btn-mode-pg').classList.add('active');
+    calcular();
 }
 
 function extrairDadosValidos() {
-let itens = [];
-for (let d in db) {
-db[d].forEach(i => { if (i.dadosBrutos) itens.push(i); });
-}
-return itens;
+    let itens = [];
+    for (let d in db) {
+        db[d].forEach(i => { if (i.dadosBrutos) itens.push(i); });
+    }
+    return itens;
 }
 
 function obterEstatisticasEquipe(nomeEquipe) {
-if (!nomeEquipe) return null;
-const todosItens = extrairDadosValidos();
-const nomeUpper = nomeEquipe.trim().toUpperCase();
-let partidas = 0;
-let cantosHTSoma = 0;
-let cantosGeralSoma = 0;
-todosItens.forEach(i => {
-const t1 = (i.dadosBrutos.time1 || '').trim().toUpperCase();
-const t2 = (i.dadosBrutos.time2 || '').trim().toUpperCase();
-let cantosEquipe = 0;
-let isEquipeT1 = (t1 === nomeUpper);
-let isEquipeT2 = (t2 === nomeUpper);
-if (isEquipeT1 || isEquipeT2) {
-partidas++;
-const c1 = Number(i.dadosBrutos.cantos1 || 0);
-const c2 = Number(i.dadosBrutos.cantos2 || 0);
-const totalJogo = Number(i.dadosBrutos.cantosTotal || (c1 + c2));
-const min = Number(i.dadosBrutos.minuto || 45);
-if (isEquipeT1 && !isEquipeT2) {
-cantosEquipe = c1;
-} else if (isEquipeT2 && !isEquipeT1) {
-cantosEquipe = c2;
-} else {
-cantosEquipe = totalJogo / 2;
-}
-let htProjetado = min <= 45 ? cantosEquipe : Math.round((cantosEquipe / min) * 45);
-let geralProjetado = Math.round((cantosEquipe / min) * 90);
-cantosHTSoma += htProjetado;
-cantosGeralSoma += geralProjetado;
-}
-});
-if (partidas === 0) return null;
-return {
-partidas,
-mediaHT: (cantosHTSoma / partidas).toFixed(1),
-mediaGeral: (cantosGeralSoma / partidas).toFixed(1)
-};
+    if (!nomeEquipe) return null;
+    const todosItens = extrairDadosValidos();
+    const nomeUpper = nomeEquipe.trim().toUpperCase();
+
+    let partidas = 0;
+    let cantosHTSoma = 0;
+    let cantosGeralSoma = 0;
+
+    todosItens.forEach(i => {
+        const t1 = (i.dadosBrutos.time1 || '').trim().toUpperCase();
+        const t2 = (i.dadosBrutos.time2 || '').trim().toUpperCase();
+
+        let isEquipeT1 = (t1 === nomeUpper);
+        let isEquipeT2 = (t2 === nomeUpper);
+
+        if (isEquipeT1 || isEquipeT2) {
+            partidas++;
+            
+            let c1FinalReal = i.dadosBrutos.cantos1Final;
+            let c2FinalReal = i.dadosBrutos.cantos2Final;
+            let temFinalReal = (c1FinalReal !== null && c1FinalReal !== undefined && c2FinalReal !== null && c2FinalReal !== undefined);
+
+            let cantosEquipe = 0;
+            if (temFinalReal) {
+                if (isEquipeT1 && !isEquipeT2) cantosEquipe = c1FinalReal;
+                else if (isEquipeT2 && !isEquipeT1) cantosEquipe = c2FinalReal;
+                else cantosEquipe = (c1FinalReal + c2FinalReal) / 2;
+
+                cantosHTSoma += Math.round(cantosEquipe / 2); 
+                cantosGeralSoma += cantosEquipe;
+            } else {
+                const c1 = Number(i.dadosBrutos.cantos1 || 0);
+                const c2 = Number(i.dadosBrutos.cantos2 || 0);
+                const totalJogo = Number(i.dadosBrutos.cantosTotal || (c1 + c2));
+                const min = Number(i.dadosBrutos.minuto || 45);
+
+                if (isEquipeT1 && !isEquipeT2) cantosEquipe = c1;
+                else if (isEquipeT2 && !isEquipeT1) cantosEquipe = c2;
+                else cantosEquipe = totalJogo / 2;
+                
+                let htProjetado = min <= 45 ? cantosEquipe : Math.round((cantosEquipe / min) * 45);
+                let geralProjetado = Math.round((cantosEquipe / min) * 90);
+
+                cantosHTSoma += htProjetado;
+                cantosGeralSoma += geralProjetado;
+            }
+        }
+    });
+
+    if (partidas === 0) return null;
+
+    return {
+        partidas,
+        mediaHT: (cantosHTSoma / partidas).toFixed(1),
+        mediaGeral: (cantosGeralSoma / partidas).toFixed(1)
+    };
 }
 
 function atualizarRastreadorEstatisticas() {
-const itens = extrairDadosValidos().filter(i => i.status === 'G');
-if (itens.length === 0) {
-document.getElementById('stat-minutos').innerText = "Janela Recomendada: 15' a 38' (HT)";
-document.getElementById('stat-appm').innerText = "APPM Mínimo: >= 1.00";
-document.getElementById('stat-atq').innerText = "Ataques Perigosos: >= 1 por min";
-document.getElementById('stat-ligas').innerText = "Sem dados de Greens gravados.";
-} else {
-let minSoma = 0, appmSoma = 0, atqSoma = 0;
-itens.forEach(i => {
-minSoma += Number(i.dadosBrutos.minuto);
-appmSoma += Number(i.dadosBrutos.appm);
-atqSoma += (Number(i.dadosBrutos.atq1) + Number(i.dadosBrutos.atq2));
-});
-const total = itens.length;
-document.getElementById('stat-minutos').innerText = `Média: ${(minSoma/total).toFixed(0)}' minutos`;
-document.getElementById('stat-appm').innerText = `APPM Médio nos acertos: ${(appmSoma/total).toFixed(2)}`;
-document.getElementById('stat-atq').innerText = `Média de ${(atqSoma/total).toFixed(0)} ataques perigosos`;
-document.getElementById('stat-ligas').innerText = `${total} Green(s) mapeados no total.`;
-}
-const t1Nome = document.getElementById('time1').value;
-const t2Nome = document.getElementById('time2').value;
-const elConfronto = document.getElementById('stat-confronto');
-const elObsVisor = document.getElementById('obs-confronto');
-if (!t1Nome && !t2Nome) {
-elConfronto.innerHTML = "Digite o nome dos times na Calculadora para consultar o histórico de cada equipe.";
-elObsVisor.innerHTML = "💡 <b>Observação (Histórico):</b> Digite o nome dos times para ver as médias acumuladas.";
-return;
-}
-const st1 = obterEstatisticasEquipe(t1Nome);
-const st2 = obterEstatisticasEquipe(t2Nome);
-let htmlConfronto = "";
-let htmlObsVisor = "💡 <b>Observação (Histórico):</b><br>";
-if (t1Nome) {
-if (st1) {
-let txt1 = `<b>${t1Nome.toUpperCase()}</b> (${st1.partidas} jg): Média HT <b>${st1.mediaHT}</b> | Geral <b>${st1.mediaGeral}</b>`;
-htmlConfronto += txt1 + "<br>";
-htmlObsVisor += "• " + txt1 + "<br>";
-} else {
-htmlConfronto += `<b>${t1Nome.toUpperCase()}</b>: Sem histórico.<br>`;
-htmlObsVisor += `• <b>${t1Nome.toUpperCase()}</b>: Sem histórico recente.<br>`;
-}
-}
-if (t2Nome) {
-if (st2) {
-let txt2 = `<b>${t2Nome.toUpperCase()}</b> (${st2.partidas} jg): Média HT <b>${st2.mediaHT}</b> | Geral <b>${st2.mediaGeral}</b>`;
-htmlConfronto += txt2 + "<br>";
-htmlObsVisor += "• " + txt2 + "<br>";
-} else {
-htmlConfronto += `<b>${t2Nome.toUpperCase()}</b>: Sem histórico.<br>`;
-htmlObsVisor += `• <b>${t2Nome.toUpperCase()}</b>: Sem histórico recente.<br>`;
-}
-}
-if (st1 && st2) {
-const projHT = (Number(st1.mediaHT) + Number(st2.mediaHT)).toFixed(1);
-const projGeral = (Number(st1.mediaGeral) + Number(st2.mediaGeral)).toFixed(1);
-htmlConfronto += `<hr style="border-color:#3f3f46; margin:8px 0;">🎯 <b>MÉDIA ESPERADA DO CONFRONTO:</b><br>`;
-htmlConfronto += `⚡ HT: <b style="color:#4ade80;">${projHT} cantos</b> | 🔥 Geral: <b style="color:#38bdf8;">${projGeral} cantos</b>`;
-htmlObsVisor += `🎯 <b>Média do Confronto:</b> HT <b style="color:#4ade80;">${projHT}</b> | Geral <b style="color:#38bdf8;">${projGeral}</b>`;
-}
-elConfronto.innerHTML = htmlConfronto;
-elObsVisor.innerHTML = htmlObsVisor;
+    const itens = extrairDadosValidos().filter(i => i.status === 'G');
+    if (itens.length === 0) {
+        document.getElementById('stat-minutos').innerText = "Janela Recomendada: 15' a 38' (HT)";
+        document.getElementById('stat-appm').innerText = "APPM Mínimo: >= 1.00";
+        document.getElementById('stat-atq').innerText = "Ataques Perigosos: >= 1 por min";
+        document.getElementById('stat-ligas').innerText = "Sem dados de Greens gravados.";
+    } else {
+        let minSoma = 0, appmSoma = 0, atqSoma = 0;
+        itens.forEach(i => {
+            minSoma += Number(i.dadosBrutos.minuto);
+            appmSoma += Number(i.dadosBrutos.appm);
+            atqSoma += (Number(i.dadosBrutos.atq1) + Number(i.dadosBrutos.atq2));
+        });
+
+        const total = itens.length;
+        document.getElementById('stat-minutos').innerText = `Média: ${(minSoma/total).toFixed(0)}' minutos`;
+        document.getElementById('stat-appm').innerText = `APPM Médio nos acertos: ${(appmSoma/total).toFixed(2)}`;
+        document.getElementById('stat-atq').innerText = `Média de ${(atqSoma/total).toFixed(0)} ataques perigosos`;
+        document.getElementById('stat-ligas').innerText = `${total} Green(s) mapeados no total.`;
+    }
+
+    const t1Nome = document.getElementById('time1').value;
+    const t2Nome = document.getElementById('time2').value;
+    const elConfronto = document.getElementById('stat-confronto');
+    const elObsVisor = document.getElementById('obs-confronto');
+
+    if (!t1Nome && !t2Nome) {
+        elConfronto.innerHTML = "Digite o nome dos times na Calculadora para consultar o histórico de cada equipe.";
+        elObsVisor.innerHTML = "💡 <b>Observação (Histórico):</b> Digite o nome dos times para ver as médias acumuladas.";
+        return;
+    }
+
+    const st1 = obterEstatisticasEquipe(t1Nome);
+    const st2 = obterEstatisticasEquipe(t2Nome);
+
+    let htmlConfronto = "";
+    let htmlObsVisor = "💡 <b>Observação (Histórico):</b><br>";
+
+    if (t1Nome) {
+        if (st1) {
+            let txt1 = `<b>${t1Nome.toUpperCase()}</b> (${st1.partidas} jg): Média HT <b>${st1.mediaHT}</b> | Geral <b>${st1.mediaGeral}</b>`;
+            htmlConfronto += txt1 + "<br>";
+            htmlObsVisor += "• " + txt1 + "<br>";
+        } else {
+            htmlConfronto += `<b>${t1Nome.toUpperCase()}</b>: Sem histórico.<br>`;
+            htmlObsVisor += `• <b>${t1Nome.toUpperCase()}</b>: Sem histórico recente.<br>`;
+        }
+    }
+
+    if (t2Nome) {
+        if (st2) {
+            let txt2 = `<b>${t2Nome.toUpperCase()}</b> (${st2.partidas} jg): Média HT <b>${st2.mediaHT}</b> | Geral <b>${st2.mediaGeral}</b>`;
+            htmlConfronto += txt2 + "<br>";
+            htmlObsVisor += "• " + txt2 + "<br>";
+        } else {
+            htmlConfronto += `<b>${t2Nome.toUpperCase()}</b>: Sem histórico.<br>`;
+            htmlObsVisor += `• <b>${t2Nome.toUpperCase()}</b>: Sem histórico recente.<br>`;
+        }
+    }
+
+    if (st1 && st2) {
+        const projHT = (Number(st1.mediaHT) + Number(st2.mediaHT)).toFixed(1);
+        const projGeral = (Number(st1.mediaGeral) + Number(st2.mediaGeral)).toFixed(1);
+        
+        htmlConfronto += `<hr style="border-color:#3f3f46; margin:8px 0;">🎯 <b>MÉDIA ESPERADA DO CONFRONTO:</b><br>`;
+        htmlConfronto += `⚡ HT: <b style="color:#4ade80;">${projHT} cantos</b> | 🔥 Geral: <b style="color:#38bdf8;">${projGeral} cantos</b>`;
+
+        htmlObsVisor += `🎯 <b>Média do Confronto:</b> HT <b style="color:#4ade80;">${projHT}</b> | Geral <b style="color:#38bdf8;">${projGeral}</b>`;
+    }
+
+    elConfronto.innerHTML = htmlConfronto;
+    elObsVisor.innerHTML = htmlObsVisor;
 }
 
 function calcular() {
-const min = parseInt(document.getElementById('minuto').value);
-const c1 = parseInt(document.getElementById('cantos1').value || 0);
-const c2 = parseInt(document.getElementById('cantos2').value || 0);
-const cant = c1 + c2;
-const atq1 = parseInt(document.getElementById('atq1').value || 0);
-const atq2 = parseInt(document.getElementById('atq2').value || 0);
-const atq = atq1 + atq2;
-atualizarRastreadorEstatisticas();
-if (!min || isNaN(cant)) {
-document.getElementById('rastreador-live-box').style.display = 'none';
-return;
-}
-let tempoLimite = (modoTempoSelecionado === 'PG') ? 90 : 45;
-const proj = Math.round((cant / min) * tempoLimite);
-document.getElementById('res-val').innerText = proj + " cantos (" + modoTempoSelecionado + ")";
-document.getElementById('sub-res').innerText = (proj - 0.5).toFixed(1) + " OVER ESCANTEIOS";
-const appmCalculado = (atq / min);
-const appmEl = document.getElementById('appm-res');
-appmEl.innerText = `APPM: ${appmCalculado.toFixed(2)}`;
-appmEl.style.color = appmCalculado < 1.00 ? '#ef4444' : appmCalculado <= 1.10 ? '#fbbf24' : '#4ade80';
-const confiancaCalc = Math.min(Math.round((atq / min) * 100), 99);
-document.getElementById('conf-val').innerText = `Confiança: ${confiancaCalc}%`;
-avaliarRastreadorNoVisor(min, appmCalculado);
+    const min = parseInt(document.getElementById('minuto').value);
+    const c1 = parseInt(document.getElementById('cantos1').value || 0);
+    const c2 = parseInt(document.getElementById('cantos2').value || 0);
+    const cant = c1 + c2;
+    const atq1 = parseInt(document.getElementById('atq1').value || 0);
+    const atq2 = parseInt(document.getElementById('atq2').value || 0);
+    const atq = atq1 + atq2;
+
+    atualizarRastreadorEstatisticas();
+    
+    if (!min || isNaN(cant)) {
+        document.getElementById('rastreador-live-box').style.display = 'none';
+        return;
+    }
+    
+    let tempoLimite = (modoTempoSelecionado === 'PG') ? 90 : 45; 
+    const proj = Math.round((cant / min) * tempoLimite);
+    
+    document.getElementById('res-val').innerText = proj + " cantos (" + modoTempoSelecionado + ")";
+    document.getElementById('sub-res').innerText = (proj - 0.5).toFixed(1) + " OVER ESCANTEIOS";
+    
+    const appmCalculado = (atq / min);
+    const appmEl = document.getElementById('appm-res');
+    appmEl.innerText = `APPM: ${appmCalculado.toFixed(2)}`;
+    appmEl.style.color = appmCalculado < 1.00 ? '#ef4444' : appmCalculado <= 1.10 ? '#fbbf24' : '#4ade80';
+
+    const confiancaCalc = Math.min(Math.round((atq / min) * 100), 99);
+    document.getElementById('conf-val').innerText = `Confiança: ${confiancaCalc}%`;
+
+    avaliarRastreadorNoVisor(min, appmCalculado);
 }
 
 function avaliarRastreadorNoVisor(min, appm) {
-const box = document.getElementById('rastreador-live-box');
-const statusEl = document.getElementById('rastreador-status');
-const detailsEl = document.getElementById('rastreador-details');
-box.style.display = 'block';
-let avisos = [];
-let erros = 0;
-if (appm < 1.00) { avisos.push("⚠️ APPM baixo (< 1.00)"); erros++; }
-else { avisos.push("✅ APPM com boa pressão"); }
-if (modoTempoSelecionado === 'HT' && (min < 15 || min > 40)) { avisos.push("⚠️ Minuto fora do pico no HT"); erros++; }
-else { avisos.push("✅ Minuto dentro do padrão"); }
-if (erros === 0) {
-statusEl.style.color = '#4ade80';
-statusEl.innerText = "🛡️ RASTREADOR: ENTRADA SEGURA";
-} else {
-statusEl.style.color = '#fbbf24';
-statusEl.innerText = "⚠️ RASTREADOR: RISCO MODERADO";
-}
-detailsEl.innerHTML = avisos.join('<br>');
+    const box = document.getElementById('rastreador-live-box');
+    const statusEl = document.getElementById('rastreador-status');
+    const detailsEl = document.getElementById('rastreador-details');
+    box.style.display = 'block';
+
+    let avisos = [];
+    let erros = 0;
+
+    if (appm < 1.00) { avisos.push("⚠️ APPM baixo (< 1.00)"); erros++; }
+    else { avisos.push("✅ APPM com boa pressão"); }
+
+    if (modoTempoSelecionado === 'HT' && (min < 15 || min > 40)) { avisos.push("⚠️ Minuto fora do pico no HT"); erros++; }
+    else { avisos.push("✅ Minuto dentro do padrão"); }
+
+    if (erros === 0) {
+        statusEl.style.color = '#4ade80';
+        statusEl.innerText = "🛡️ RASTREADOR: ENTRADA SEGURA";
+    } else {
+        statusEl.style.color = '#fbbf24';
+        statusEl.innerText = "⚠️ RASTREADOR: RISCO MODERADO";
+    }
+    detailsEl.innerHTML = avisos.join('<br>');
 }
 
 function salvarManual() {
-const min = document.getElementById('minuto').value;
-const c1 = document.getElementById('cantos1').value || '0';
-const c2 = document.getElementById('cantos2').value || '0';
-const cTotal = Number(c1) + Number(c2);
-if (!min) {
-alert('Informe ao menos o Minuto da partida.');
-return;
-}
-const date = new Date().toLocaleDateString('pt-BR');
-if (!db[date]) db[date] = [];
-const t1 = (document.getElementById('time1').value.trim() || 'Time A').toUpperCase();
-const t2 = (document.getElementById('time2').value.trim() || 'Time B').toUpperCase();
-const g1 = document.getElementById('gols1').value || 0;
-const g2 = document.getElementById('gols2').value || 0;
-const a1 = document.getElementById('atq1').value || 0;
-const a2 = document.getElementById('atq2').value || 0;
-let tempoLimite = (modoTempoSelecionado === 'PG') ? 90 : 45;
-const proj = Math.round((cTotal / Number(min)) * tempoLimite);
-const projTexto = `${proj} cantos | ${(proj - 0.5).toFixed(1)} over escanteios`;
-const appmCalculado = ((Number(a1) + Number(a2)) / Number(min)) || 0;
-const confiancaCalc = Math.min(Math.round(((Number(a1) + Number(a2)) / Number(min)) * 100), 99) || 0;
-const nomePais = paisSelecionado ? `[${paisSelecionado.fifa}] ${paisSelecionado.nome}` : 'Geral';
-db[date].unshift({
-id: Date.now(),
-text: `<div style="color:#38bdf8; font-weight:bold; font-size:0.85em;">🌍 ${nomePais}</div> <strong>⚽ ${t1} ${g1} x ${g2} ${t2}</strong><br> ⏱️ Min: <b>${min}'</b> | 🚩 Cantos: <b>${c1} + ${c2} = ${cTotal}</b><br> 🎯 Projeção: <b style="color:#4ade80;">${projTexto}</b><br> ⚔️ Atq. Perigoso: <b>${a1} x ${a2}</b> | APPM: <b>${appmCalculado.toFixed(2)}</b> | 🎯 Confiança: <b>${confiancaCalc}%</b>`,
-status: null,
-dadosBrutos: {
-minuto: min,
-time1: t1,
-time2: t2,
-cantos1: c1,
-cantos2: c2,
-cantosTotal: cTotal,
-atq1: a1,
-atq2: a2,
-appm: appmCalculado,
-confianca: confiancaCalc,
-pais: nomePais
-}
-});
-localStorage.setItem('kcom_data', JSON.stringify(db));
-renderizar();
-showTab('hist');
+    const min = document.getElementById('minuto').value;
+    const c1 = document.getElementById('cantos1').value || '0';
+    const c2 = document.getElementById('cantos2').value || '0';
+    const cTotal = Number(c1) + Number(c2);
+
+    if (!min) {
+        alert('Informe ao menos o Minuto da partida.');
+        return;
+    }
+
+    const date = new Date().toLocaleDateString('pt-BR');
+    if (!db[date]) db[date] = [];
+    
+    const t1 = (document.getElementById('time1').value.trim() || 'Time A').toUpperCase();
+    const t2 = (document.getElementById('time2').value.trim() || 'Time B').toUpperCase();
+    const g1 = document.getElementById('gols1').value || 0;
+    const g2 = document.getElementById('gols2').value || 0;
+    const a1 = document.getElementById('atq1').value || 0;
+    const a2 = document.getElementById('atq2').value || 0;
+    
+    let tempoLimite = (modoTempoSelecionado === 'PG') ? 90 : 45;
+    const proj = Math.round((cTotal / Number(min)) * tempoLimite);
+    
+    const projTexto = `${proj} cantos | ${(proj - 0.5).toFixed(1)} over escanteios`;
+
+    const appmCalculado = ((Number(a1) + Number(a2)) / Number(min)) || 0;
+    const confiancaCalc = Math.min(Math.round(((Number(a1) + Number(a2)) / Number(min)) * 100), 99) || 0;
+    const nomePais = paisSelecionado ? `[${paisSelecionado.fifa}] ${paisSelecionado.nome}` : 'Geral';
+
+    db[date].unshift({ 
+        id: Date.now(), 
+        text: `
+            <div style="color:#38bdf8; font-weight:bold; font-size:0.85em;">🌍 ${nomePais}</div>
+            <strong>⚽ ${t1} ${g1} x ${g2} ${t2}</strong><br>
+            ⏱️ Min: <b>${min}'</b> | 🚩 Cantos (Momento): <b>${c1} + ${c2} = ${cTotal}</b><br>
+            🎯 Projeção: <b style="color:#4ade80;">${projTexto}</b><br>
+            ⚔️ Atq. Perigoso: <b>${a1} x ${a2}</b> | APPM: <b>${appmCalculado.toFixed(2)}</b> | 🎯 Confiança: <b>${confiancaCalc}%</b>
+        `,
+        status: null,
+        dadosBrutos: { 
+            minuto: min, 
+            time1: t1,
+            time2: t2,
+            cantos1: c1, 
+            cantos2: c2, 
+            cantosTotal: cTotal,
+            cantos1Final: null, 
+            cantos2Final: null,
+            cantosTotalFinal: null,
+            atq1: a1, 
+            atq2: a2, 
+            appm: appmCalculado, 
+            confianca: confiancaCalc,
+            pais: nomePais 
+        }
+    });
+    
+    localStorage.setItem('kcom_data', JSON.stringify(db));
+    renderizar();
+    showTab('hist');
 }
 
 function limparDados() {
-document.querySelectorAll('#inputGroup input').forEach(i => i.value = '');
-document.getElementById('res-val').innerText = "0 cantos";
-document.getElementById('sub-res').innerText = "0.0 cantos";
-document.getElementById('appm-res').innerText = "APPM: 0.00";
-document.getElementById('conf-val').innerText = "Confiança: 0%";
-document.getElementById('obs-confronto').innerHTML = "💡 <b>Observação (Histórico):</b> Digite o nome dos times para ver as médias acumuladas.";
-document.getElementById('rastreador-live-box').style.display = 'none';
-paisSelecionado = null;
-countrySelected.innerHTML = "🌐 Selecionar País / Liga";
-atualizarRastreadorEstatisticas();
+    document.querySelectorAll('#inputGroup input').forEach(i => i.value = '');
+    document.getElementById('res-val').innerText = "0 cantos";
+    document.getElementById('sub-res').innerText = "0.0 cantos";
+    document.getElementById('appm-res').innerText = "APPM: 0.00";
+    document.getElementById('conf-val').innerText = "Confiança: 0%";
+    document.getElementById('obs-confronto').innerHTML = "💡 <b>Observação (Histórico):</b> Digite o nome dos times para ver as médias acumuladas.";
+    document.getElementById('rastreador-live-box').style.display = 'none';
+    paisSelecionado = null;
+    countrySelected.innerHTML = "🌐 Selecionar País / Liga";
+    atualizarRastreadorEstatisticas();
 }
+
 renderizar();
 </script>
 </body>
 </html>
-
